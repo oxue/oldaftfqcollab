@@ -1,0 +1,1102 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"Mouse",
+				"MouseCursorData"
+			],
+			[
+				"supp",
+				"supportsNativeCursor : Bool"
+			],
+			[
+				"bit",
+				"BitmapData [class]"
+			],
+			[
+				"Bitma",
+				"BitmapData [flash.display]"
+			],
+			[
+				"mo",
+				"MouseCursorData [class]"
+			],
+			[
+				"cont",
+				"Context [haxe.macro]"
+			],
+			[
+				"in",
+				"createInstance(...) : createInstance.T"
+			],
+			[
+				"T",
+				"Type [class]"
+			],
+			[
+				"cr",
+				"createInstance(...) : createInstance.T"
+			],
+			[
+				"Type",
+				"Type [class]"
+			],
+			[
+				"int",
+				"Int [class]"
+			],
+			[
+				"Entit",
+				"Entities [editor]"
+			],
+			[
+				"tile",
+				"TileEntity [class]"
+			],
+			[
+				"fill",
+				"fillRect(...) : Void"
+			],
+			[
+				"re",
+				"RenderContext [class]"
+			],
+			[
+				"pi",
+				"PixMap [class]"
+			],
+			[
+				"stac",
+				"stackSubPanel(...) : tk.Panel"
+			],
+			[
+				"scalemode",
+				"StageScaleMode [flash.display]"
+			],
+			[
+				"scal",
+				"scaleMode : flash.display.StageScaleMode"
+			],
+			[
+				"add",
+				"addChild(...) : DisplayObject"
+			],
+			[
+				"TestMap",
+				"TestMapPanel [editor]"
+			],
+			[
+				"ad",
+				"addChild(...) : DisplayObject"
+			],
+			[
+				"displayObjec",
+				"DisplayObjectContainer [flash.display]"
+			],
+			[
+				"Tilemap",
+				"TilemapModule [class]"
+			],
+			[
+				"ed",
+				"EditorCore [class]"
+			],
+			[
+				"EditoC",
+				"EditorCore [editor]"
+			],
+			[
+				"ma",
+				"mapWidth : Int"
+			],
+			[
+				"displ",
+				"displayTilemap"
+			],
+			[
+				"j",
+				"j"
+			],
+			[
+				"clea",
+				"clearModules"
+			],
+			[
+				"tilema",
+				"Tilemap [class]"
+			],
+			[
+				"strin",
+				"String [class]"
+			],
+			[
+				"void",
+				"Void [class]"
+			],
+			[
+				"String",
+				"String [class]"
+			],
+			[
+				"sw",
+				"swf-lib"
+			],
+			[
+				"Eng",
+				"EnginePanel [editor]"
+			],
+			[
+				"mai",
+				"main() : Void"
+			],
+			[
+				"tF",
+				"tFramework [package]"
+			],
+			[
+				"bu",
+				"Button [class]"
+			],
+			[
+				"pa",
+				"Panel [class]"
+			],
+			[
+				"flash",
+				"flash"
+			],
+			[
+				"u",
+				"utils"
+			],
+			[
+				"lin",
+				"lineStyle(...) : Void"
+			],
+			[
+				"gra",
+				"graphics : flash.display.Graphics"
+			],
+			[
+				"m",
+				"moveTo( x : Float , y : Float ) : Void"
+			],
+			[
+				"ln",
+				"lineStyle(...) : Void"
+			],
+			[
+				"til",
+				"tilesize : Int"
+			],
+			[
+				"x",
+				"x : Float"
+			],
+			[
+				"drare",
+				"drawRect(...) : Void"
+			],
+			[
+				"poin",
+				"Point [class]"
+			],
+			[
+				"se",
+				"selectedTile"
+			],
+			[
+				"setc",
+				"setCell [function]"
+			],
+			[
+				"cl",
+				"clear() : Void"
+			],
+			[
+				"hiliteLayer",
+				"hiliteLayer"
+			],
+			[
+				"displbit",
+				"displayBitmap [var]"
+			],
+			[
+				"graphic",
+				"drawGraphicsData(...) : Void"
+			],
+			[
+				"hiliteLa",
+				"hiliteLayer [var]"
+			],
+			[
+				"displa",
+				"displayTilemap [var]"
+			],
+			[
+				"draRe",
+				"drawRect(...) : Void"
+			],
+			[
+				"begi",
+				"beginFill(...) : Void"
+			],
+			[
+				"mous",
+				"mouseEnabled : Bool"
+			],
+			[
+				"hilit",
+				"hiliteLayer [var]"
+			],
+			[
+				"sprite",
+				"Sprite [flash9.display]"
+			],
+			[
+				"Writ",
+				"writeLn( _msg : Dynamic ) : Void"
+			],
+			[
+				"le",
+				"length"
+			],
+			[
+				"currBu",
+				"currBuffer : editor.EditBuffer"
+			],
+			[
+				"clo",
+				"closeWindow"
+			],
+			[
+				"write",
+				"writeLn"
+			],
+			[
+				"SimpleOut",
+				"SimpleOut"
+			],
+			[
+				"simpl",
+				"SimpleOut"
+			],
+			[
+				"get",
+				"get"
+			],
+			[
+				"Vec",
+				"Vector [flash9]"
+			],
+			[
+				"Cellm",
+				"CellMap [editor]"
+			],
+			[
+				"len",
+				"length : UInt"
+			],
+			[
+				"l",
+				"length : UInt"
+			],
+			[
+				"_o",
+				"_o"
+			],
+			[
+				"last",
+				"lastIndexOf(...) : Int"
+			],
+			[
+				"g",
+				"get(...) : CellMapObject>"
+			],
+			[
+				"Cellma",
+				"CellMap [editor]"
+			],
+			[
+				"Void",
+				"Void [class]"
+			],
+			[
+				"pare",
+				"parent : DisplayObjectContainer"
+			],
+			[
+				"sele",
+				"selectedEntity : editor.Entity"
+			],
+			[
+				"ba",
+				"BACKSPACE : UInt"
+			],
+			[
+				"ke",
+				"Keyboard [class]"
+			],
+			[
+				"ui",
+				"ui [package]"
+			],
+			[
+				"selectedEntity",
+				"selectedEntity"
+			],
+			[
+				"KeyBo",
+				"KeyboardEvent [class]"
+			],
+			[
+				"keyboa",
+				"KeyboardEvent [class]"
+			],
+			[
+				"eve",
+				"events [package]"
+			],
+			[
+				"addEve",
+				"addEventListener(...) : Void"
+			],
+			[
+				"cur",
+				"current : flash.display.MovieClip"
+			],
+			[
+				"lib",
+				"Lib [class]"
+			],
+			[
+				"Bool",
+				"Bool [class]"
+			],
+			[
+				"selece",
+				"selectedEntity : editor.Entity"
+			],
+			[
+				"mar",
+				"marked : Bool"
+			],
+			[
+				"selected",
+				"selectedEntity : editor.Entity"
+			],
+			[
+				"na",
+				"name : String"
+			],
+			[
+				"val",
+				"value : String"
+			],
+			[
+				"up",
+				"updateScreen() : Void"
+			],
+			[
+				"di",
+				"displayTilemap : editor.Tilemap"
+			],
+			[
+				"con",
+				"containsPoint(...) : Bool"
+			],
+			[
+				"poi",
+				"Point [class]"
+			],
+			[
+				"fl",
+				"Float [class]"
+			],
+			[
+				"ret",
+				"ret [var]"
+			],
+			[
+				"vod",
+				"VoucherAccessInfo [flash9.net.drm]"
+			],
+			[
+				"c",
+				"c"
+			],
+			[
+				"mou",
+				"mouseX : Float"
+			],
+			[
+				"Vect",
+				"Vector"
+			],
+			[
+				"cols",
+				"colSize [var]"
+			],
+			[
+				"displtile",
+				"displayTilemap [var]"
+			],
+			[
+				"displbitm",
+				"displayBitmap [var]"
+			],
+			[
+				"par",
+				"partionStruct : editor.CellMap"
+			],
+			[
+				"vec",
+				"Vector [class]"
+			],
+			[
+				"Veco",
+				"DRMVoucherStoreContext [flash9.net.drm]"
+			],
+			[
+				"bool",
+				"Bool [class]"
+			],
+			[
+				"Celmap",
+				"CellMap [class]"
+			],
+			[
+				"pu",
+				"push( x : editor.Entity ) : Int"
+			],
+			[
+				"Cell",
+				"CellMap [editor]"
+			],
+			[
+				"Fl",
+				"Float2 [editor]"
+			],
+			[
+				"Vecot",
+				"DRMVoucherStoreContext [flash9.net.drm]"
+			],
+			[
+				"gy",
+				"gy"
+			],
+			[
+				"set",
+				"set(...) : Void"
+			],
+			[
+				"Typ",
+				"TypedDictionary [class]"
+			],
+			[
+				"Typed",
+				"TypedDictionary [class]"
+			],
+			[
+				"typed",
+				"TypedDictionary [flash9.utils]"
+			],
+			[
+				"0",
+				"_0"
+			],
+			[
+				"fLOAT2",
+				"Float2 [editor]"
+			],
+			[
+				"cellm",
+				"CellMap [editor]"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "editor/ToolBox.hx",
+			"settings":
+			{
+				"buffer_size": 470,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "editor/ToolButton.hx",
+			"settings":
+			{
+				"buffer_size": 513,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Main.hx",
+			"settings":
+			{
+				"buffer_size": 1184,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "bin/template package/config.json",
+			"settings":
+			{
+				"buffer_size": 781,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "io/EntFactory.hx",
+			"settings":
+			{
+				"buffer_size": 796,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "io/StandardTileIndexes.hx",
+			"settings":
+			{
+				"buffer_size": 717,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "package editor;\n\nimport editor.EditBuffer;\nimport editor.EnginePanel;\nimport editor.Entity;\nimport editor.Menu;\nimport editor.NewBufferWizard; 				\nimport editor.OpenBuffer;\nimport editor.TestMapPanel;\nimport flash.display.BitmapData;\nimport flash.display.DisplayObjectContainer;\nimport flash.display.Loader;\nimport flash.events.Event;\nimport flash.net.FileReference;\nimport flash.net.URLRequest;\nimport flash.utils.ByteArray;\nimport tFramework.core.Manager;\nimport tFramework.render.Screen;\nimport tk.Panel;\nimport tk.SimpleOut;\n\nclass EditorCore\n{\n	public static var displayTarget:DisplayObjectContainer;\n\n	public static var selectedTile:Int;\n	public static var selectedTool:Int;\n	public static var selectedEnt:Int;\n\n	public static var mainPanel:Panel;\n\n	public static var currBuffer:EditBuffer;\n\n	public static var entIcon:BitmapData;\n	public static var loader:Loader;\n\n	public static var selectedEntity:Entity;\n\n	public static var mapName:String;\n\n	public static var engp:EnginePanel;\n	public static var tmp:TestMapPanel;\n\n	public static function init(_displayTarget:DisplayObjectContainer):Void\n	{\n		displayTarget = _displayTarget;\n\n		loader = new Loader();\n		loader.contentLoaderInfo.addEventListener(Event.COMPLETE, finish);\n		loader.load(new URLRequest(\"entIcon.png\"));\n	}\n\n	public static function finish(e:Event):Void\n	{\n\n		entIcon = new BitmapData(16,16);\n		entIcon.draw(loader);\n		entIcon.floodFill(0,0,0);\n		entIcon.floodFill(0,15,0);\n		entIcon.floodFill(15,0,0);\n		entIcon.floodFill(15,15,0);\n		entIcon = new ByteImage(entIcon).decode();\n		mainPanel = new Panel('',0,0,false,false,false);\n		displayTarget.addChild(mainPanel);\n\n		var m:Menu = new Menu();\n		addPanel(m);\n		m.x = 1000;\n\n		SimpleOut.init();\n		addPanel(SimpleOut.instance);\n		\n		engp = new EnginePanel();\n		addPanel(engp);\n		engp.x = 800;\n		engp.y = 600 - engp.height;\n\n		SimpleOut.instance.y = 450;\n		SimpleOut.writeLn(\"hi, I'm the editor, any error output, loading notices etc will come out here. Remember, if no error or debug information comes out and nothing is happening, I'm probably still working, be patient\");\n		\n		Manager.main();\n		Manager.clearModules();\n		tmp = new TestMapPanel();\n		mainPanel.addChild(tmp);\n		Screen.setup(EditorCore.tmp.container, 2, 0x555555);\n	}\n\n	public static function openBuffer():Void\n	{\n		var ow:OpenBuffer = new OpenBuffer();\n		addPanel(ow);\n		ow.x = 500 - ow.width * 0.5;\n		ow.y = 300 - ow.height * 0.5;\n	}\n\n	public static function newBuffer():Void\n	{\n		var nbw:NewBufferWizard = new NewBufferWizard();\n		addPanel(nbw);\n		nbw.x = 500 - nbw.width * 0.5;\n		nbw.y = 300 - nbw.height * 0.5;\n	}\n\n	public static function addPanel(_panel:Panel):Panel\n	{\n		mainPanel.stackSubPanel(_panel);\n		_panel.x = _panel.y = 0;\n		return _panel;\n	}\n\n	public static function encode():String\n	{\n		if(currBuffer == null)\n		{\n			SimpleOut.writeLn(\"cannot save for the following reason(s):\");\n			SimpleOut.writeLn(\"    no edit buffer open\");\n			return null;\n		}\n\n		var obj:Dynamic = {};\n\n		if(obj==null)\n		{\n			trace(\"!!\");\n		}\n\n		var obj:Dynamic ={};\n\n		obj.map_name = currBuffer.title.text;\n		obj.tile_size = currBuffer.displayTilemap.tilesize;\n		obj.map_width = currBuffer.displayTilemap.mapWidth;\n		obj.map_height = currBuffer.displayTilemap.mapHeight;\n		obj.data = currBuffer.data;\n\n		var es = new Array<Dynamic>();\n		var i:Int = currBuffer.displayTilemap.entities.length;\n		while(i-->0)\n		{\n			var e:Dynamic = {};\n			e.x = currBuffer.displayTilemap.entities[i].x;\n			e.y = currBuffer.displayTilemap.entities[i].y;\n			e.name = currBuffer.displayTilemap.entities[i].name;\n			e.bounds = currBuffer.displayTilemap.entities[i].bounds;\n			es.push(e);\n		}\n\n		obj.entities = es;\n\n\n		obj.cfg = currBuffer.cfg;\n\n		//var tiles:String = new ByteImage(currBuffer.displayTilemap.graphic).data;\n		//obj.tile_sheet_data = tiles;\n		obj.sheet_width = currBuffer.displayTilemap.graphic.width;\n		obj.sheet_height = currBuffer.displayTilemap.graphic.height;\n\n		mapName = obj.map_name;\n		SimpleOut.writeLn(flash.utils.JSON.stringify(obj));\n\n		return flash.utils.JSON.stringify(obj);\n	}\n\n	public static function saveMap():Void\n	{\n		var str:String = encode();\n\n		SimpleOut.writeLn(\"you are saving this string:\");\n		SimpleOut.writeLn(str);\n\n		new FileReference().save(str,mapName + \".json\");\n	}\n}",
+			"file": "editor/EditorCore.hx",
+			"file_size": 4266,
+			"file_write_time": 1332737667000000,
+			"settings":
+			{
+				"buffer_size": 4268,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "screw dis shit.hx",
+			"settings":
+			{
+				"buffer_size": 31631,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "game/tiles/DirtTile3.hx",
+			"settings":
+			{
+				"buffer_size": 381,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "editor/EditBuffer.hx",
+			"settings":
+			{
+				"buffer_size": 9585,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"selected_items":
+		[
+			[
+				"class",
+				"Snippet: Class"
+			],
+			[
+				"moo",
+				"Snippet: Anonymous Function (f)"
+			],
+			[
+				"",
+				"About"
+			]
+		],
+		"width": 392.0
+	},
+	"console":
+	{
+		"height": 129.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/home/e/Documents/test1/editor/EditBuffer.hx",
+		"/home/e/Documents/test1/screw dis shit.hx",
+		"/home/e/tfq/tfq-collab/new toolkit/tk_doc.txt",
+		"/home/e/Desktop/v3.json",
+		"/home/e/Documents/test1/bin/cfg.json",
+		"/home/e/Documents/test1/io/MapSe.hx",
+		"/home/e/Documents/test1/io/EntFactory.hx",
+		"/home/e/Documents/test1/Core.hx",
+		"/home/e/Documents/test1/editor/EditorCore.hx",
+		"/home/e/Documents/test1/game/entities/Plushie.hx",
+		"/home/e/Documents/test1/game/entities/Crate.hx",
+		"/home/e/Documents/test1/game/entities/Item.hx",
+		"/home/e/Documents/test1/Main.hx",
+		"/home/e/Documents/test1/tk/SimpleOut.hx",
+		"/home/e/Documents/test1/game/entities/Player.hx",
+		"/home/e/Documents/test1/editor/OpenBuffer.hx",
+		"/home/e/Documents/test1/game/entities/Portal.hx",
+		"/home/e/Documents/test1/tFramework/tile/TileEntity.hx",
+		"/home/e/Documents/test1/modules/TilemapModule.hx",
+		"/home/e/Documents/test1/modules/PortalModule.hx",
+		"/home/e/Documents/test1/modules/EntFactory.hx",
+		"/home/e/Documents/test1/editor/EnginePanel.hx",
+		"/home/e/Documents/test1/tFramework/core/Manager.hx",
+		"/home/e/Documents/test1/tFramework/render/Screen.hx",
+		"/home/e/Documents/test1/editor/TestMapPanel.hx",
+		"/home/e/Documents/test1/io/StandardTileIndexes.hx",
+		"/home/e/Documents/test1/issues.txt",
+		"/home/e/Documents/test1/editor/Entities.hx",
+		"/home/e/Documents/test1/editor/Tilemap.hx",
+		"/home/e/Documents/test1/editor/NewBufferWizard.hx",
+		"/home/e/Documents/test1/bin/dscrpt.txt",
+		"/home/e/tfq/tfq-collab/src/Main.hx",
+		"/home/e/Documents/test1/compile.hxml",
+		"/home/e/Documents/test1/editor/CellMap.hx",
+		"/home/e/Documents/test1/nme_compile.nmml",
+		"/home/e/Documents/test2/compile.nmml",
+		"/usr/share/haxe/flash9/Vector.hx",
+		"/home/e/Documents/test1/editor/ToolBox.hx",
+		"/home/e/Documents/test1/editor/TilePallet.hx",
+		"/home/e/Documents/test1/editor/Entity.hx",
+		"/home/e/Documents/test1/editor/CellMapObject.hx",
+		"/home/e/Documents/test1/editor/Float2.hx",
+		"/home/e/Desktop/my new map.json",
+		"/home/e/Documents/test1/editor/Menu.hx",
+		"/home/e/Desktop/p.json",
+		"/home/e/Documents/test1/editor/ByteImage.hx",
+		"/home/e/Documents/test1/editor/OpenBuffer.hx\\",
+		"/home/e/Documents/test1/tk/Panel.hx",
+		"/home/e/Documents/test1/editor/EntButton.hx",
+		"/home/e/Documents/test1/tk/SlideBar.hx",
+		"/home/e/Documents/test1/bin/EntityIcon.png",
+		"/home/e/Documents/test1/tk/Slider.hx",
+		"/home/e/Documents/test1/editor/Slider.hx",
+		"/home/e/Documents/test1/tk/Button.hx",
+		"/home/e/Documents/test1/editor/ToolButton.hx",
+		"/home/e/Documents/test1/bin/testtiles",
+		"/home/e/.config/sublime-text-2/Packages/User/Global.sublime-settings",
+		"/home/e/Documents/test1/tk/ToolkitEngine.hx",
+		"/home/e/Documents/test1/tk/io/GraphicLoader.hx",
+		"/home/e/Documents/test1/tk/io/BinaryLoader.hx",
+		"/home/e/Documents/test1/tk/Input.hx",
+		"/home/e/Documents/test1/bin/graphite/dscrpt.txt",
+		"/home/e/Documents/test1/mlc/haxe/input/ConsoleInputSource.hx",
+		"/home/e/Documents/test1/tk/io/Binaryloader.hx",
+		"/home/e/Documents/test1/tk/Binaryloader.hx",
+		"/home/e/Documents/test1/bin/Main.swf",
+		"/home/e/Documents/test1/test.sublime-project",
+		"/home/e/Documents/test1/test.sublime-workspace",
+		"/home/e/.config/sublime-text-2/Packages/User/Default (Linux).sublime-keymap",
+		"/home/e/Documents/test1/src/Main.hx"
+	],
+	"find":
+	{
+		"height": 33.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"]},",
+			"str",
+			"{\"name\":\"player start\"},\n		{\"name\":\"plushie\"},\n		{\"name\":\"check point\"},\n		{\"name\":\"crate\"},\n		{\"name\":\"player start\"},\n		{\"name\":\"plushie\"},\n		{\"name\":\"check point\"},\n		{\"name\":\"crate\"},\n		{\"name\":\"player start\"},\n		{\"name\":\"plushie\"},\n		{\"name\":\"check point\"},\n		{\"name\":\"crate\"}",
+			"trace",
+			"P",
+			"());"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "editor/ToolBox.hx",
+					"settings":
+					{
+						"buffer_size": 470,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								211,
+								211
+							]
+						],
+						"settings":
+						{
+							"haxe-build-id": 0,
+							"syntax": "Packages/HaXe/HaXe.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "editor/ToolButton.hx",
+					"settings":
+					{
+						"buffer_size": 513,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								504,
+								504
+							]
+						],
+						"settings":
+						{
+							"haxe-build-id": 0,
+							"syntax": "Packages/HaXe/HaXe.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "Main.hx",
+					"settings":
+					{
+						"buffer_size": 1184,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								919,
+								919
+							]
+						],
+						"settings":
+						{
+							"haxe-build-id": 0,
+							"syntax": "Packages/HaXe/HaXe.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 234.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "bin/template package/config.json",
+					"settings":
+					{
+						"buffer_size": 781,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								477,
+								477
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "io/EntFactory.hx",
+					"settings":
+					{
+						"buffer_size": 796,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								554,
+								554
+							]
+						],
+						"settings":
+						{
+							"haxe-build-id": 0,
+							"syntax": "Packages/HaXe/HaXe.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "io/StandardTileIndexes.hx",
+					"settings":
+					{
+						"buffer_size": 717,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								419,
+								419
+							]
+						],
+						"settings":
+						{
+							"haxe-build-id": 0,
+							"syntax": "Packages/HaXe/HaXe.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 117.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "editor/EditorCore.hx",
+					"settings":
+					{
+						"buffer_size": 4268,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3703,
+								3703
+							]
+						],
+						"settings":
+						{
+							"haxe-build-id": 0,
+							"syntax": "Packages/HaXe/HaXe.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1560.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "screw dis shit.hx",
+					"settings":
+					{
+						"buffer_size": 31631,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"haxe-build-id": 0,
+							"syntax": "Packages/HaXe/HaXe.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "game/tiles/DirtTile3.hx",
+					"settings":
+					{
+						"buffer_size": 381,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								280,
+								280
+							]
+						],
+						"settings":
+						{
+							"haxe-build-id": 0,
+							"syntax": "Packages/HaXe/HaXe.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "editor/EditBuffer.hx",
+					"settings":
+					{
+						"buffer_size": 9585,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								6192,
+								6192
+							]
+						],
+						"settings":
+						{
+							"haxe-build-id": 0,
+							"syntax": "Packages/HaXe/HaXe.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 3042.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 29.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.haxe":
+	{
+		"height": 88.0
+	},
+	"replace":
+	{
+		"height": 0.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"",
+				"editor/ToolBox.hx"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 211.0,
+	"status_bar_visible": true
+}

@@ -1,0 +1,24 @@
+package libTF.shapes 
+{
+	import flash.display.Sprite;
+	
+	public class ConvexPoly extends Sprite
+	{
+		
+		public function ConvexPoly(numSides:int, radius:int, fill:uint = 0xFFFFFF, outline:uint = 0x000000) 
+		{
+			graphics.lineStyle(1, outline);
+			var ang:Number = 0;
+			graphics.moveTo(Math.cos(ang) * radius, Math.sin(ang) * radius);
+			graphics.beginFill(fill);
+			for (var i:int = 1; i <= numSides; i++)
+			{
+				ang = Math.PI * 2 * i / numSides;
+				graphics.lineTo(Math.cos(ang) * radius, Math.sin(ang) * radius);
+			}
+			graphics.endFill();
+		}
+		
+	}
+
+}

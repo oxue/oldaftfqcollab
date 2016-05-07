@@ -1,0 +1,178 @@
+package libTF.interfaces 
+{
+	import flash.display.Bitmap;
+	import flash.display.BitmapData;
+	import flash.display.Sprite;
+	import flash.events.Event;
+	import flash.events.MouseEvent;
+	import flash.geom.Rectangle;
+	
+	public class ToggleGrid extends Sprite
+	{
+		private var gWidth:int;
+		private var gHeight:int;
+		private var tileSize:int;
+		
+		public var vect:Vector.<Boolean>
+		
+		private var BMD:BitmapData;
+		private var BM:Bitmap;
+		
+		private var drawing:Boolean;
+		private var erasing:Boolean;
+		
+		public function ToggleGrid(width:int, height:int, tileSize:int) 
+		{
+			this.gWidth = width;
+			this.gHeight = height;
+			this.tileSize = tileSize;
+			
+			vect = new Vector.<Boolean>();
+			
+			for (var i:int = 0; i < width*height; i++)
+			{
+				vect.push(false);
+			}
+			
+			BMD = new BitmapData(width * tileSize, height * tileSize);
+			BM = new Bitmap(BMD);
+			addChild(BM);
+			
+			drawing = erasing = false;
+			
+			drawBorders();
+			
+			addEventListener(MouseEvent.MOUSE_DOWN, startD);
+			addEventListener(MouseEvent.MOUSE_UP, stopD);
+			addEventListener(Event.ENTER_FRAME, drawF);
+		}
+		
+		public function draw():void
+		{
+			drawBorders();
+			drawFills();
+		}
+		
+		public function drawBorders():void
+		{
+			BMD.lock();
+			var i:int, j:int;
+			for (i = 0; i <= gWidth; i++)
+			{
+				for (j = 0; j < gHeight*tileSize; j++)
+				{
+					if (i != 0) { BMD.setPixel(i * tileSize-1, j, 0x000000); }
+					if (i != gWidth) { BMD.setPixel(i * tileSize, j, 0x000000); }
+				}
+			}
+			for (j = 0; j <= gHeight; j++)
+			{
+				for (i = 0; i < gWidth*tileSize; i++)
+				{
+					if (j != 0) { BMD.setPixel(i, j * tileSize-1, 0x000000); }
+					if (j != gWidth) { BMD.setPixel(i, j * tileSize, 0x000000); }
+				}
+			}
+			BMD.unlock();
+		}
+		
+		public function drawFills():void 
+		{
+			BMD.lock();
+			for (var i:int = 0; i < vect.length; i++)
+			{
+				if (vect[i])
+				{
+					drawFill(i % gWidth, int(i / gWidth), 0xFF0000);
+				}
+				else
+				{
+					drawFill(i % gWidth, int(i / gWidth), 0xFFFFFF);
+				}
+			}
+			BMD.unlock();
+		}
+		
+		private function drawFill(x:int, y:int, col:uint):void
+		{
+			if (0 <= x && x < gWidth && 0 <= y && y < gHeight)
+			{
+				BMD.lock();			
+				for (var i:int = x * tileSize + 1; i < (x + 1) * tileSize + -1; i++)
+				{
+					for (var j:int = y * tileSize + 1; j < (y + 1) * tileSize + -1; j++)
+					{
+						BMD.setPixel(i, j, col);
+					}
+				}
+				BMD.unlock();
+			}
+		}
+		
+		public function toggle(x:int, y:int):void
+		{
+			if (0 <= x && x < gWidth * tileSize && 0 <= y && y < gHeight * tileSize)
+			{
+				var xV:int = int(x/ tileSize);
+				var yV:int = int(y/ tileSize);
+				vect[xV + yV * gWidth] = !vect[xV + yV * gWidth];
+				if (vect[xV + yV * gWidth]) {drawFill(xV, yV, 0xFF0000);}
+				else { drawFill(xV, yV, 0xFFFFFF); }
+			}
+		}
+		
+		public function on(x:int, y:int):void
+		{
+			if (0 <= x && x < gWidth * tileSize && 0 <= y && y < gHeight * tileSize)
+			{
+				var xV:int = int(x/ tileSize);
+				var yV:int = int(y/ tileSize);
+				vect[xV + yV * gWidth] = true;
+				drawFill(xV, yV, 0xFF0000);
+			}
+		}
+		
+		public function off(x:int, y:int):void
+		{
+			if (0 <= x && x < gWidth * tileSize && 0 <= y && y < gHeight * tileSize)
+			{
+				var xV:int = int(x/ tileSize);
+				var yV:int = int(y/ tileSize);
+				vect[xV + yV * gWidth] = false;
+				drawFill(xV, yV, 0xFFFFFF);
+			}
+		}
+		
+		public function drawF(e:Event):void
+		{
+			if (drawing) { on(mouseX, mouseY); }
+			else if (erasing) { off(mouseX, mouseY); }
+		}
+		
+		public function startD(e:MouseEvent):void
+		{
+			var xV:int = int(mouseX/ tileSize);
+			var yV:int = int(mouseY / tileSize);
+			if (0 <= xV && xV < gWidth && 0 <= yV && yV < gHeight)
+			{
+				if (vect[xV + yV * gWidth])
+				{
+					erasing = true;
+					drawing = false;
+				}
+				else
+				{
+					erasing = false;
+					drawing = true;
+				}
+			}
+		}
+		
+		public function stopD(e:MouseEvent):void
+		{
+			erasing = drawing = false;
+		}
+		
+	}
+
+}

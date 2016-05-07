@@ -1,0 +1,37 @@
+package game.entities;
+import flash.geom.Point;
+import flash.geom.Rectangle;
+import tFramework.core.units.Unit;
+import tFramework.render.PixMap;
+import tFramework.render.RenderContext;
+
+/**
+ * ...
+ * @author worldedit
+ */
+
+class Warp implements Unit
+{
+	
+	public var x:Int;
+	public var y:Int;
+	public var graphic:PixMap;
+	
+	public function new() 
+	{
+		graphic = Global.warpimage;
+		x = y = 150;
+	}
+	
+	public function update():Void
+	{
+		
+	}
+	
+	public function render(map:PixMap, context:RenderContext):Void
+	{
+		var p:Point = new Point(x + context.x - 8, y + context.y - 12);
+		map.copyPixels(graphic, graphic.rect, p, null, null, true);
+	}
+	
+}

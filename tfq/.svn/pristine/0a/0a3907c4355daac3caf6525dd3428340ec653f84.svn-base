@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<project version="2">
+  <!-- Output SWF options -->
+  <output>
+    <movie outputType="Application" />
+    <movie input="" />
+    <movie path="bin\tfqc.swf" />
+    <movie fps="180" />
+    <movie width="640" />
+    <movie height="480" />
+    <movie version="10" />
+    <movie minorVersion="3" />
+    <movie platform="Flash Player" />
+    <movie background="#000000" />
+    <movie preferredSDK="Haxe 2.08;2.08;" />
+  </output>
+  <!-- Other classes to be compiled into your SWF -->
+  <classpaths>
+    <class path="src" />
+  </classpaths>
+  <!-- Build options -->
+  <build>
+    <option directives="" />
+    <option flashStrict="False" />
+    <option mainClass="Main" />
+    <option enabledebug="True" />
+    <option additional="" />
+  </build>
+  <!-- haxelib libraries -->
+  <haxelib>
+    <!-- example: <library name="..." /> -->
+  </haxelib>
+  <!-- Class files to compile (other referenced classes will automatically be included) -->
+  <compileTargets>
+    <compile path="src\Main.hx" />
+  </compileTargets>
+  <!-- Assets to embed into the output SWF -->
+  <library>
+    <asset path="lib\tiles.png" bitmap="True" id="game.assets.Tiles" />
+    <asset path="lib\Charsprite.png" bitmap="True" id="game.assets.Char" />
+    <asset path="lib\items.png" bitmap="True" id="game.assets.Items" />
+    <asset path="lib\logo.png" bitmap="True" id="game.assets.Logo" />
+    <asset path="lib\Enemies.png" bitmap="True" id="game.assets.Enemies" />
+    <asset path="lib\testarrow.png" bitmap="True" id="game.assets.Arrow" />
+    <asset path="lib\warpsprite.png" bitmap="True" id="game.assets.WarpGFX" update="lib\warpsprite.png" />
+  </library>
+  <!-- Paths to exclude from the Project Explorer tree -->
+  <hiddenPaths>
+    <hidden path="src\tFramework\tile\TileEntity.hx" />
+  </hiddenPaths>
+  <!-- Executed before build -->
+  <preBuildCommand />
+  <!-- Executed after build -->
+  <postBuildCommand alwaysRun="False" />
+  <!-- Other project options -->
+  <options>
+    <option showHiddenPaths="True" />
+    <option testMovie="Default" />
+  </options>
+  <!-- Plugin storage -->
+  <storage />
+</project>

@@ -1,0 +1,22 @@
+package libTF.shapes 
+{
+	import flash.display.Sprite;
+	import flash.geom.Matrix;
+	
+	public class GradRRect extends Sprite
+	{
+		
+		public function GradRRect(width:int, height:int, col1:uint, col2:uint, rounding:int) 
+		{
+			var m:Matrix = new Matrix()
+			m.createGradientBox(width, height, -Math.PI / 2, -width/2, -height/2);
+			
+			graphics.lineStyle(1,0,1,true);
+			graphics.beginGradientFill("linear", [col1, col2], [1, 1], [0, 255],m);
+			graphics.drawRoundRect( -width / 2, -height / 2, width, height, rounding, rounding);
+			graphics.endFill();
+		}
+		
+	}
+
+}

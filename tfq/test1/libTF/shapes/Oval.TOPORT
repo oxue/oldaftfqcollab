@@ -1,0 +1,18 @@
+package libTF.shapes 
+{
+	import flash.display.Sprite;
+	
+	public class Oval extends Sprite 
+	{
+		
+		public function Oval(width:int, height:int, fill:uint = 0xFFFFFF, outline:uint = 0x000000) 
+		{
+			graphics.lineStyle(1, outline);
+			graphics.beginFill(fill);
+			graphics.drawEllipse(0, 0, width, height);
+			graphics.endFill();
+		}
+		
+	}
+
+}

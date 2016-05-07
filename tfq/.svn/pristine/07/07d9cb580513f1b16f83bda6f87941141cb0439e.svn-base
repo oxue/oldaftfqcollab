@@ -1,0 +1,18 @@
+package  libTF.shapes
+{
+	import flash.display.Sprite;
+	
+	public class Rect extends Sprite
+	{
+		
+		public function Rect(wd:int, ht:int, fill:uint = 0xFFFFFF, outline:uint = 0x000000) 
+		{
+			graphics.lineStyle(1, outline);
+			graphics.beginFill(fill);
+			graphics.drawRect(-wd/2, -ht/2, wd, ht);
+			graphics.endFill();
+		}
+		
+	}
+
+}

@@ -1,0 +1,121 @@
+package editor;
+
+import editor.ByteImage;
+import editor.EditBuffer;
+import editor.EditorCore;
+import editor.Entities;
+import editor.Tilemap;
+import editor.TilePallet;
+import editor.ToolBox;
+import flash.display.BitmapData;
+import flash.Vector;
+import tk.Button;
+import tk.Input;
+import tk.io.BinaryLoader;
+import tk.Panel;
+
+class OpenBuffer extends Panel
+{
+	public var mapInput:Input;
+	public var browseMap:Button;
+	public var acceptButton:Button;
+	public var loadDone:Bool;
+
+	public function new()
+	{
+		super("Open",300,400);
+		mapInput = new Input("map",200);
+		browseMap = new Button("...",30,20,startLoad);
+		stackSubPanel(mapInput);
+		stackSubPanel(browseMap);
+		acceptButton = new Button("accept",100,100,accept);
+		stackSubPanel(acceptButton);
+	}
+
+	public function startLoad():Void
+	{
+		BinaryLoader.startLoadSequence(complete); 
+	}
+
+	public function complete():Void
+	{
+		loadDone = true;
+		mapInput.value = BinaryLoader.fr.name;	
+	}
+
+	public function accept():Void
+	{
+		if(!loadDone)
+		{
+			return;
+		}
+		var mapObj:Dynamic = flash.utils.JSON.parse(BinaryLoader.data);
+		var sheet:ByteImage = new ByteImage();
+		sheet.data = mapObj.tile_sheet_data;
+		sheet.width = mapObj.sheet_width;
+		sheet.height = mapObj.sheet_height;
+		var sheetd:BitmapData = sheet.decode();
+		var tm:Tilemap = new Tilemap(sheetd,mapObj.map_width, mapObj.map_height, mapObj.tile_size);
+		var i:Int = mapObj.map_height;
+		var vd:Vector<Vector<Int>> = new Vector<Vector<Int>>(mapObj.map_height,true); 
+		while(i-->0)
+		{
+			vd[i] = new Vector<Int>(mapObj.map_width);
+			var j:Int = mapObj.map_width;
+			while(j-->0)
+			{
+				vd[i][j] = mapObj.data[i][j];
+				tm.data[i][j] = mapObj.data[i][j];
+			}
+		}
+		var eb:EditBuffer = new EditBuffer(mapObj.map_name,tm);
+		EditorCore.currBuffer = eb;
+		EditorCore.addPanel(eb);
+		eb.data = vd;
+
+		var tb:ToolBox = new ToolBox();
+		EditorCore.addPanel(tb);
+		tb.x = 800;
+		eb.onTopOfMe.push(tb);
+		EditorCore.currBuffer.binds.push(tb);
+
+		var cfgStr:String = flash.utils.JSON.stringify(mapObj.cfg);
+		var plt:TilePallet = new TilePallet(sheetd,mapObj.tile_size,cfgStr);
+		EditorCore.addPanel(plt);
+		plt.x = 800;
+		plt.y = tb.y + tb.height;
+		eb.onTopOfMe.push(plt);
+		EditorCore.currBuffer.binds.push(plt);
+
+		i = mapObj.map_height;
+		
+		while(i-->0)
+		{
+			var j:Int = mapObj.map_width;
+			while(j-->0)
+			{
+				eb.autotile(j,i);
+			}
+		}
+		
+		var en:Entities = new Entities(cfgStr);
+		EditorCore.currBuffer.binds.push(en);
+		EditorCore.addPanel(en);
+		en.x = 800;
+		en.y = plt.y + plt.height;
+		eb.onTopOfMe.push(en);
+		closeWindow();
+		eb.updateScreen();
+
+		var i:Int = mapObj.entities.length;
+		while(i-->0)
+		{
+			eb.displayTilemap.addEntity(
+				new Entity(mapObj.entities[i].name,
+					mapObj.entities[i].x,
+					mapObj.entities[i].y,
+					mapObj.entities[i].bounds)
+			);
+		}
+	}
+}

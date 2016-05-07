@@ -1,0 +1,18 @@
+Game mechanics
+
+	Exploration
+	Terrain Editing
+	Generated Terrain/World
+		Except for the levels where scenario takes place
+
+Features
+
+	Terrain Editing
+	Items
+	projectiles
+	Water?
+	Dynamic Terrain/World
+	
+Story Idea
+
+	Miners escape

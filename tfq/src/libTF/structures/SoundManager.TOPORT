@@ -1,0 +1,138 @@
+package libTF.structures 
+{
+	import flash.media.Sound;
+	import flash.media.SoundChannel;
+	
+	public class SoundManager 
+	{
+		private var loops:Vector.<int>;
+		private var playing:Vector.<Number>;
+		private var channels:Vector.<SoundChannel>;
+		private var sounds:Vector.<Sound>;
+		
+		public function SoundManager() 
+		{
+			loops = new Vector.<int>();
+			playing = new Vector.<Number>();
+			channels = new Vector.<SoundChannel>();
+			sounds = new Vector.<Sound>()
+		}
+		
+		public function playOnce(snd:Sound):SoundChannel
+		{
+			loops.push(1);
+			playing.push(0);
+			channels.push(snd.play(0, 1));
+			sounds.push(snd);
+			return(channels[channels.length - 1]);
+		}
+		
+		public function playLooping(snd:Sound):SoundChannel
+		{
+			loops.push(0);
+			playing.push(0);
+			channels.push(snd.play(0, 0));
+			sounds.push(snd);
+			return(channels[channels.length - 1]);
+		}
+		
+		public function stop(channel:SoundChannel):void
+		{
+			for (var i:int = 0; i < channels.length; i++)
+			{
+				if (channels[i] == channel)
+				{
+					channels[i].stop();
+					loops.splice(i, 1);
+					playing.splice(i, 1);
+					channels.splice(i, 1);
+					sounds.splice(i, 1);
+					break;
+				}
+			}
+		}
+		
+		public function pause(channel:SoundChannel):void
+		{
+			for (var i:int = 0; i < channels.length; i++)
+			{
+				if (channels[i] == channel)
+				{
+					channels[i].stop();
+					playing[i] = channels[i].position;
+					break;
+				}
+			}
+		}
+		
+		public function resume(channel:SoundChannel):void
+		{
+			for (var i:int = 0; i < channels.length; i++)
+			{
+				if (channels[i] == channel)
+				{
+					if (playing[i])
+					{
+						channels[i] = sounds[i].play(playing[i], loops[i]);
+						playing[i] = 0;
+					}
+					break;
+				}
+			}
+		}
+		
+		public function setVol(channel:SoundChannel, vol:Number):void
+		{
+			for (var i:int = 0; i < channels.length; i++)
+			{
+				if (channels[i] == channel)
+				{
+					channels[i].soundTransform.volume = vol;
+					break;
+				}
+			}
+		}
+		
+		public function stopAll():void
+		{
+			for (var i:int = 0; i < channels.length; i++)
+			{
+				channels[i].stop();
+				loops.splice(i, 1);
+				playing.splice(i, 1);
+				channels.splice(i, 1);
+				sounds.splice(i, 1);
+			}
+		}
+		
+		public function setVolAll(vol:Number):void
+		{
+			for (var i:int = 0; i < channels.length; i++)
+			{
+				channels[i].soundTransform.volume = vol;
+			}
+		}
+		
+		public function pauseAll():void
+		{
+			for (var i:int = 0; i < channels.length; i++)
+			{
+				channels[i].stop();
+				playing[i] = channels[i].position;
+			}
+		}
+		
+		public function resumeAll():void
+		{
+			for (var i:int = 0; i < channels.length; i++)
+			{
+				if (playing[i])
+				{
+					channels[i] = sounds[i].play(playing[i], loops[i]);
+					playing[i] = 0;
+				}
+			}
+		}
+	}
+
+}

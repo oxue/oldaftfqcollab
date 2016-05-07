@@ -1,0 +1,399 @@
+package editor;
+
+import editor.Entity;
+import editor.Tilemap;
+import flash.display.BitmapData;
+import flash.display.Bitmap;
+import flash.display.Sprite;
+import flash.events.KeyboardEvent;
+import flash.events.MouseEvent;
+import flash.geom.Point;
+import flash.geom.Rectangle;
+import flash.ui.Keyboard;
+import flash.utils.ByteArray;
+import flash.Vector;
+import tk.Panel;
+import tk.SimpleOut;
+
+class EditBuffer extends Panel
+{
+	public var displayTilemap:Tilemap;
+	public var data:Vector<Vector<Int>>;
+	public var displayData:BitmapData;
+	public var displayBitmap:Bitmap;
+	public var mouseIsDown:Bool;
+	public var checkPoints:Vector<Point>;
+	public var camera:Rectangle;
+	public var cfg:Dynamic;
+	public var mousedOut:Bool;
+	public var hiliteLayer:Sprite;
+	public var binds:Vector<Panel>;
+	public var tilesheetName:String;
+	public var tilesheetBytes:ByteArray;
+
+	public function new(_mapName:String,_tilemap:Tilemap)
+	{
+		super(_mapName,800,450);
+		displayTilemap = _tilemap;
+		displayData = new BitmapData(750,410);
+		displayBitmap = new Bitmap(displayData);
+		displayBitmap.x = 10;
+
+		displayBitmap.y = 30;
+		addChild(displayBitmap);
+		displayTilemap.render(displayData, displayData.rect);
+
+		data = new Vector<Vector<Int>>(_tilemap.mapHeight,true);
+		var i:Int = _tilemap.mapHeight;
+		while(i-->0)
+		{
+			data[i] = new Vector<Int>(_tilemap.mapWidth,true);
+		}
+
+		checkPoints = new Vector<Point>();
+		camera = new Rectangle(0, 0, 750, 410);
+
+		addEventListener(MouseEvent.MOUSE_MOVE, mouseMove);
+		addEventListener(MouseEvent.MOUSE_OUT, mouseOut);
+		addEventListener(MouseEvent.MOUSE_OVER, mouseIn);
+
+		hiliteLayer = new Sprite();
+		addChild(hiliteLayer);
+		hiliteLayer.x = displayBitmap.x;
+		hiliteLayer.y = displayBitmap.y;
+		hiliteLayer.mouseEnabled = false;
+		hiliteLayer.mouseChildren = false;
+		binds = new Vector<Panel>();
+
+		flash.Lib.current.parent.addEventListener(KeyboardEvent.KEY_DOWN,keyDown);
+	}
+
+	public override function closeWindow():Void
+	{
+		super.closeWindow();
+		EditorCore.currBuffer = null;
+		var i:Int = binds.length;
+		while(i-->0)
+		{
+			binds[i].closeWindow();
+		}
+	}
+
+	public function keyDown(e:KeyboardEvent):Void
+	{
+		switch(e.keyCode)
+		{
+			case Keyboard.BACKSPACE:
+				if(EditorCore.selectedEntity!=null){
+					EditorCore.selectedEntity.remove = true;
+					EditorCore.selectedEntity.removeFrom();
+				}
+				updateScreen();
+		}
+	}
+
+	public function mouseOut(e:MouseEvent):Void
+	{
+		mousedOut = true;
+		mouseUp(e);
+	}
+
+	public function mouseIn(e:MouseEvent):Void
+	{
+		mousedOut = false;
+	}
+
+	public override function focus(e:MouseEvent):Void
+	{
+		super.focus(null);
+		EditorCore.currBuffer = this;
+	}
+
+	public inline function updateScreen():Void
+	{
+		displayData.fillRect(displayData.rect, 0xffffffff);
+		displayTilemap.render(displayData, camera);
+	}
+
+	public inline function getTileX():Int
+	{
+		return Std.int((displayBitmap.mouseX + camera.x) / displayTilemap.tilesize);
+	}
+
+	public inline function getTileY():Int
+	{
+		return Std.int((displayBitmap.mouseY + camera.y) / displayTilemap.tilesize);
+	}
+
+	public function mouseMove(e:MouseEvent):Void
+	{
+		if(mouseX > 10 && mouseX < 760 && mouseY > 30 && mouseY < 440)
+		{
+			if(mouseIsDown)
+			{
+				switch(EditorCore.selectedTool)
+				{
+					case 0:
+						setCell(getTileX(),getTileY(),EditorCore.selectedTile);
+						updateScreen();
+
+					case 1:
+						var p = new Point(getTileX(), getTileY());
+						var left:Int = Std.int(Math.min(checkPoints[0].x,p.x));
+						var up:Int = Std.int(Math.min(checkPoints[0].y,p.y));
+						var right:Int = Std.int(Math.max(checkPoints[0].x,p.x)) + 1;
+						var down:Int = Std.int(Math.max(checkPoints[0].y,p.y)) + 1;
+						hiliteLayer.graphics.clear();
+						hiliteLayer.graphics.beginFill(0xff0000,0.5);
+						hiliteLayer.graphics.drawRect(left*displayTilemap.tilesize-camera.x,up*displayTilemap.tilesize-camera.y,
+							(right-left)*displayTilemap.tilesize,(down-up)*displayTilemap.tilesize);
+
+					case 2:
+						setCell(getTileX(),getTileY(),0);
+						updateScreen();
+					case 3:
+						camera.x = Std.int(checkPoints[0].x - displayBitmap.mouseX + checkPoints[1].x);
+						camera.y = Std.int(checkPoints[0].y - displayBitmap.mouseY + checkPoints[1].y);
+						SimpleOut.writeLn("the position of the camera is "+ cast camera.x + " : " +  cast camera.y);
+						updateScreen();
+
+					case 4:
+						var p:Point = new Point(getTileX(), getTileY());
+
+						hiliteLayer.graphics.clear();
+						hiliteLayer.graphics.beginFill(0xff0000,0.5);
+						hiliteLayer.graphics.drawRect(checkPoints[0].x*displayTilemap.tilesize-camera.x,checkPoints[0].y*displayTilemap.tilesize-camera.y,displayTilemap.tilesize,displayTilemap.tilesize);
+						hiliteLayer.graphics.drawRect(p.x*displayTilemap.tilesize-camera.x,p.y*displayTilemap.tilesize-camera.y,displayTilemap.tilesize,displayTilemap.tilesize);
+						hiliteLayer.graphics.lineStyle(16,0xff0000,0.5);
+
+						hiliteLayer.graphics.moveTo((checkPoints[0].x+0.5)*displayTilemap.tilesize-camera.x,(checkPoints[0].y+0.5)*displayTilemap.tilesize-camera.y);
+						hiliteLayer.graphics.lineTo((p.x+0.5)*displayTilemap.tilesize-camera.x,(p.y+0.5)*displayTilemap.tilesize-camera.y);
+						hiliteLayer.graphics.lineStyle(0,0,0);
+				}
+			}
+		}
+	}
+		
+	public inline function drawBresenhamLine(a1:Int, b1:Int, a2:Int, b2:Int):Int
+	{
+		var dx = a2 - a1;
+		var dy = b2 - b1;
+		var ax, ay, sx, sy;
+		if (dx < 0)
+		{
+			ax =-dx;
+			sx =-1;
+		}
+		else
+		{
+			ax = dx;
+			sx = 1;
+		}
+		if (dy < 0)
+		{
+			ay =-dy;
+			sy =-1;
+		}
+		else
+		{
+			ay = dy;
+			sy = 1;
+		}
+		
+		ax <<= 1;
+		ay <<= 1;
+		
+		var x = a1;
+		var y = b1;
+		
+		var i = 0;
+		
+		if (ax > ay)
+		{
+			var d = ay - (ax >> 1);
+			while (x != a2)
+			{
+				setCell(x,y,EditorCore.selectedTile);
+				if (d >= 0)
+				{
+					y += sy;
+					d -= ax;
+				}
+				x += sx;
+				d += ay;
+			}
+		}
+		else
+		{
+			var d = ax - (ay >> 1);
+			while (y != b2)
+			{
+				setCell(x,y,EditorCore.selectedTile);
+				if (d >= 0)
+				{
+					x += sx;
+					d -= ay;
+				}
+				y += sy;
+				d += ax;
+			}
+		}
+		
+		return i;
+	}
+
+
+	public function setCell(j:Int, i:Int, value:Int):Void
+	{
+		if((j>=0)
+		&&(j<=displayTilemap.mapWidth-1)
+		&&(i>=0)
+		&&(i<=displayTilemap.mapHeight-1))
+		{
+			data[i][j] = value;
+			displayTilemap.data[i][j] = cfg.tiles[value].main;
+			autotile(j,i);
+			autotile(j+1,i);
+			autotile(j-1,i);
+			autotile(j,i+1);
+			autotile(j,i-1);
+		}
+	}
+	
+	public function autotileAll():Void
+	{
+		var i:Int = displayTilemap.mapHeight;
+		while (i-->0)
+		{
+			var j:Int = displayTilemap.mapWidth;
+			while (j-->0)
+			{
+				autotile(j, i);
+			}
+		}
+	}
+
+	public function autotile(j:Int, i:Int):Void
+	{
+		if(j>=0)
+		if(j<=displayTilemap.mapWidth-1)
+		if(i>=0)
+		if(i<=displayTilemap.mapHeight-1)
+		if(cfg.tiles[data[i][j]].autotiles != null)
+		{
+			var l:Bool = (data[i][(j-1)  >=0?(j-1):(displayTilemap.mapWidth-1) ] != data[i][j]);
+			var r:Bool = (data[i][(j+1)  <=(displayTilemap.mapWidth-1)?(j+1):0 ] != data[i][j]);
+			var u:Bool = (data[(i-1)  >=0?(i-1):(displayTilemap.mapHeight-1) ][j] != data[i][j]);
+			var d:Bool = (data[(i+1)  <=(displayTilemap.mapHeight-1)?(i+1):0 ][j] != data[i][j]);
+
+			displayTilemap.data[i][j] = cfg.tiles[data[i][j]].autotiles[(l?8:0) | (r?4:0) | (u?2:0) | (d?1:0)];
+		}
+	}
+
+	public override function mouseDown(e:MouseEvent):Void
+	{
+		mouseIsDown = true;
+
+		if(mouseX<10 || mouseX>760||mouseY<30||mouseY>440)
+		{
+			super.mouseDown(e);
+		}else
+		{
+			switch(EditorCore.selectedTool)
+			{
+				case 1,4:
+					checkPoints.push(new Point(getTileX(), getTileY()));
+				case 3:
+					checkPoints.push(new Point(camera.x, camera.y));
+					checkPoints.push(new Point(displayBitmap.mouseX, displayBitmap.mouseY));
+				case 5:
+					var e:Entity = new Entity(cfg.entities[EditorCore.selectedEnt].name,cast displayBitmap.mouseX + camera.x,cast displayBitmap.mouseY + camera.y, cfg.entities[EditorCore.selectedEnt].bounds);
+					displayTilemap.addEntity(e);
+					updateScreen();
+				case 6:
+					var v = displayTilemap.partionStruct.get(displayBitmap.mouseX + camera.x,displayBitmap.mouseY + camera.y);
+					var i:Int = v.length;
+					var mx = displayBitmap.mouseX + camera.x;
+					var my = displayBitmap.mouseY + camera.y;
+					var p:Point = new Point(mx, my);
+					while(i-->0)
+					{
+						var e = cast(v[i],Entity);
+						
+						if(e.boundRect.containsPoint(p))
+						{
+							e.marked = true;
+							EditorCore.selectedEntity = e;
+							i=1;
+							break;
+						}
+					}
+					updateScreen();
+			}
+		}
+	}	
+
+	public inline function clearCheckPoints()
+	{
+		while(checkPoints.length != 0)
+		{
+			checkPoints.pop();
+		}
+	}
+
+	public override function mouseUp(e:MouseEvent):Void
+	{
+		mouseIsDown = false;
+
+		if(mouseX<10 || mouseX>760||mouseY<30||mouseY>440||mousedOut)
+		{
+			super.mouseUp(e);
+			switch(EditorCore.selectedTool)
+			{
+				case 1:
+					clearCheckPoints();
+				case 3:
+					if(checkPoints.length!=0)
+					{
+						camera.x = checkPoints[0].x;
+						camera.y = checkPoints[0].y;
+					}
+					clearCheckPoints();
+					updateScreen();
+				case 4:
+					clearCheckPoints();
+			}
+		}else
+		{
+			switch(EditorCore.selectedTool)
+			{					
+				case 1:
+					checkPoints.push(new Point(getTileX(), getTileY()));
+					var left:Int = Std.int(Math.min(checkPoints[0].x,checkPoints[1].x));
+					var up:Int = Std.int(Math.min(checkPoints[0].y,checkPoints[1].y));
+					var right:Int = Std.int(Math.max(checkPoints[0].x,checkPoints[1].x)) + 1;
+					var down:Int = Std.int(Math.max(checkPoints[0].y,checkPoints[1].y)) + 1;
+					var i:Int = down;
+					while(i-->up)
+					{
+						var j:Int = right;
+						while(j-->left)
+						{
+							setCell(j,i,EditorCore.selectedTile);
+						}
+					}
+					updateScreen();
+					clearCheckPoints();
+					hiliteLayer.graphics.clear();
+
+				case 3:
+					clearCheckPoints();
+
+				case 4:
+					drawBresenhamLine(Std.int(checkPoints[0].x), Std.int(checkPoints[0].y), getTileX(), getTileY());
+					clearCheckPoints();
+					updateScreen();
+			}
+		}
+	}
+}

@@ -1,0 +1,75 @@
+Issues
+
+	----no generalized render function in editbuffer, called everywhere, sometimes clears, sometimes don't.
+
+	----setCell function is rendering the tilemap every time it's called, should optimize because the fill tools use it
+
+	----better output information for camera position
+
+	****shape and position of the toolbox
+
+	----toolbox has unfinished tools
+
+	----mouse moves out of the screen during checkpoints and releases! bugs!
+
+	----EditorCore missing io functions
+
+	Tilemap can't zoom yet
+
+	io package is still full static
+
+	----Input has no height option
+
+	****Toolkit engine loads skin files; needs to load a single file that spcifies the skin file.
+
+	----cfg file not parsed or used
+
+	----some children panel type may have unremoved listeners after unloaded.
+
+	----add functions binds to the functions in menu
+
+	tool cursors
+
+	----layout
+
+
+
+
+----    FIXED
+****    HOLD
+!!!!    IMPORTANT
+        PENDING FIXES AND ADDITIONS
+
+
+
+
+   1.
+      TODO:
+   2.
+      ----don't save if no file is open (so no error is thrown)
+   3.
+      ----don't throw error if I try to draw with a pallete item that wasn't defined in CFG
+   4.
+      ----thing that should be "tilesheet" says "tilesize"
+   5.
+      ----fix undeletable entities
+   6.
+      ****associating entities with images
+   7.
+      ****split encoding
+   8.
+      ****some way to reopen closed windows
+   9.
+      ----autotile integration?
+  10.
+      ----UI improvements (hilight selected tool, entity. hilight the area you're going to draw)
+  11.
+      ****Make VE work, whatever it is
+  12.
+      ****tooltips
+  13.
+      layers?
+  14.
+      entity "snapping" options?
+  15.
+      ----fix the top item being 'alpha lowered' when scrolled all the way up?

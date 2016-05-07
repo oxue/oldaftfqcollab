@@ -1,0 +1,78 @@
+package  libTF.interfaces
+{
+	import flash.display.Shape;
+	import flash.events.EventDispatcher;
+	import flash.events.Event;
+	import flash.events.IEventDispatcher;
+	import flash.geom.Rectangle;
+	import flash.ui.Keyboard;
+	
+	public class ArrowKeyMovement
+	{
+		public var friction:Number;
+		public var speed:int;
+		public var x:int, y:int;
+		public var xVel:Number, yVel:Number;
+		public var bounds:Rectangle;
+		private var keyBind:int;
+		
+		public function ArrowKeyMovement(spd:int, bnd:Rectangle = null, frict:Number = 1, arrows:Boolean = true, wasd:Boolean = false) 
+		{
+			speed = spd;
+			bounds = bnd;
+			friction = frict;
+			x = y = 0;
+			xVel = yVel = 0;
+			keyBind = int(arrows) + (int(wasd) << 1);
+			keyBind = (!keyBind)?1:keyBind;
+			(new Shape()).addEventListener(Event.ENTER_FRAME, move);
+		}
+		
+		public function useArrows():void {keyBind = 1;}
+		public function useWASD():void {keyBind = 2;}
+		public function useBoth():void {keyBind = 3;}
+		
+		private function move(e:Event):void
+		{
+			xVel *= (1 - friction);
+			yVel *= (1 - friction);
+			if (keyBind == 1) { handleArrows(); }
+			else if (keyBind == 2) { handleWASD(); }
+			else if (keyBind == 3) { handleBoth(); }
+			x += xVel;
+			y += yVel;
+			if (bounds)
+			{
+				if (x < bounds.x) { x = bounds.x; xVel = 0; }
+				else if (x > bounds.x + bounds.width) { x = bounds.x + bounds.width;  xVel = 0; }
+				if (y < bounds.y) { y = bounds.y; yVel = 0; }
+				else if (y > bounds.y + bounds.height) { y = bounds.y + bounds.height; yVel = 0; }
+			}
+		}
+		
+		private function handleWASD():void
+		{
+			if (KeyManager.isPressed(65)) { xVel -= speed; }
+			if (KeyManager.isPressed(87)) { yVel -= speed; }
+			if (KeyManager.isPressed(68)) { xVel += speed; }
+			if (KeyManager.isPressed(83)) { yVel += speed; }
+		}
+		
+		private function handleArrows():void
+		{
+			if (KeyManager.isPressed(37)) { xVel -= speed; }
+			if (KeyManager.isPressed(38)) { yVel -= speed; }
+			if (KeyManager.isPressed(39)) { xVel += speed; }
+			if (KeyManager.isPressed(40)) { yVel += speed; }
+		}
+		private function handleBoth():void
+		{
+			if (KeyManager.isPressed(37) || KeyManager.isPressed(65)) { xVel -= speed; }
+			if (KeyManager.isPressed(38) || KeyManager.isPressed(87)) { yVel -= speed; }
+			if (KeyManager.isPressed(39) || KeyManager.isPressed(68)) { xVel += speed; }
+			if (KeyManager.isPressed(40) || KeyManager.isPressed(83)) { yVel += speed; }
+		}
+		
+	}
+
+}

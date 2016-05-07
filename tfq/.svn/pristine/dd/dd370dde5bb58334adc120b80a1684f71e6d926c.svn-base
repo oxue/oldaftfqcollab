@@ -1,0 +1,901 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"j",
+				"j"
+			],
+			[
+				"clea",
+				"clearModules"
+			],
+			[
+				"tilema",
+				"Tilemap [class]"
+			],
+			[
+				"strin",
+				"String [class]"
+			],
+			[
+				"void",
+				"Void [class]"
+			],
+			[
+				"String",
+				"String [class]"
+			],
+			[
+				"sw",
+				"swf-lib"
+			],
+			[
+				"Eng",
+				"EnginePanel [editor]"
+			],
+			[
+				"mai",
+				"main() : Void"
+			],
+			[
+				"ma",
+				"Manager [class]"
+			],
+			[
+				"tF",
+				"tFramework [package]"
+			],
+			[
+				"bu",
+				"Button [class]"
+			],
+			[
+				"pa",
+				"Panel [class]"
+			],
+			[
+				"flash",
+				"flash"
+			],
+			[
+				"u",
+				"utils"
+			],
+			[
+				"lin",
+				"lineStyle(...) : Void"
+			],
+			[
+				"gra",
+				"graphics : flash.display.Graphics"
+			],
+			[
+				"m",
+				"moveTo( x : Float , y : Float ) : Void"
+			],
+			[
+				"ln",
+				"lineStyle(...) : Void"
+			],
+			[
+				"til",
+				"tilesize : Int"
+			],
+			[
+				"x",
+				"x : Float"
+			],
+			[
+				"drare",
+				"drawRect(...) : Void"
+			],
+			[
+				"tile",
+				"tilesize : Int"
+			],
+			[
+				"poin",
+				"Point [class]"
+			],
+			[
+				"se",
+				"selectedTile"
+			],
+			[
+				"setc",
+				"setCell [function]"
+			],
+			[
+				"cl",
+				"clear() : Void"
+			],
+			[
+				"hiliteLayer",
+				"hiliteLayer"
+			],
+			[
+				"displbit",
+				"displayBitmap [var]"
+			],
+			[
+				"graphic",
+				"drawGraphicsData(...) : Void"
+			],
+			[
+				"hiliteLa",
+				"hiliteLayer [var]"
+			],
+			[
+				"displa",
+				"displayTilemap [var]"
+			],
+			[
+				"draRe",
+				"drawRect(...) : Void"
+			],
+			[
+				"begi",
+				"beginFill(...) : Void"
+			],
+			[
+				"mous",
+				"mouseEnabled : Bool"
+			],
+			[
+				"hilit",
+				"hiliteLayer [var]"
+			],
+			[
+				"sprite",
+				"Sprite [flash9.display]"
+			],
+			[
+				"Writ",
+				"writeLn( _msg : Dynamic ) : Void"
+			],
+			[
+				"le",
+				"length"
+			],
+			[
+				"int",
+				"Int [class]"
+			],
+			[
+				"currBu",
+				"currBuffer : editor.EditBuffer"
+			],
+			[
+				"clo",
+				"closeWindow"
+			],
+			[
+				"write",
+				"writeLn"
+			],
+			[
+				"SimpleOut",
+				"SimpleOut"
+			],
+			[
+				"simpl",
+				"SimpleOut"
+			],
+			[
+				"get",
+				"get"
+			],
+			[
+				"Vec",
+				"Vector [flash9]"
+			],
+			[
+				"Cellm",
+				"CellMap [editor]"
+			],
+			[
+				"re",
+				"removeFrom() : Void"
+			],
+			[
+				"len",
+				"length : UInt"
+			],
+			[
+				"l",
+				"length : UInt"
+			],
+			[
+				"_o",
+				"_o"
+			],
+			[
+				"last",
+				"lastIndexOf(...) : Int"
+			],
+			[
+				"g",
+				"get(...) : CellMapObject>"
+			],
+			[
+				"Cellma",
+				"CellMap [editor]"
+			],
+			[
+				"in",
+				"Int [class]"
+			],
+			[
+				"Void",
+				"Void [class]"
+			],
+			[
+				"pare",
+				"parent : DisplayObjectContainer"
+			],
+			[
+				"sele",
+				"selectedEntity : editor.Entity"
+			],
+			[
+				"ba",
+				"BACKSPACE : UInt"
+			],
+			[
+				"ke",
+				"Keyboard [class]"
+			],
+			[
+				"ui",
+				"ui [package]"
+			],
+			[
+				"selectedEntity",
+				"selectedEntity"
+			],
+			[
+				"KeyBo",
+				"KeyboardEvent [class]"
+			],
+			[
+				"keyboa",
+				"KeyboardEvent [class]"
+			],
+			[
+				"eve",
+				"events [package]"
+			],
+			[
+				"addEve",
+				"addEventListener(...) : Void"
+			],
+			[
+				"cur",
+				"current : flash.display.MovieClip"
+			],
+			[
+				"lib",
+				"Lib [class]"
+			],
+			[
+				"Bool",
+				"Bool [class]"
+			],
+			[
+				"selece",
+				"selectedEntity : editor.Entity"
+			],
+			[
+				"mar",
+				"marked : Bool"
+			],
+			[
+				"selected",
+				"selectedEntity : editor.Entity"
+			],
+			[
+				"Entit",
+				"Entity [editor]"
+			],
+			[
+				"na",
+				"name : String"
+			],
+			[
+				"val",
+				"value : String"
+			],
+			[
+				"up",
+				"updateScreen() : Void"
+			],
+			[
+				"di",
+				"displayTilemap : editor.Tilemap"
+			],
+			[
+				"con",
+				"containsPoint(...) : Bool"
+			],
+			[
+				"poi",
+				"Point [class]"
+			],
+			[
+				"fl",
+				"Float [class]"
+			],
+			[
+				"ret",
+				"ret [var]"
+			],
+			[
+				"vod",
+				"VoucherAccessInfo [flash9.net.drm]"
+			],
+			[
+				"c",
+				"c"
+			],
+			[
+				"add",
+				"addEntity( _e : editor.Entity ) : Void"
+			],
+			[
+				"mou",
+				"mouseX : Float"
+			],
+			[
+				"cont",
+				"concat(...) : CellMapObject>"
+			],
+			[
+				"Vect",
+				"Vector"
+			],
+			[
+				"cols",
+				"colSize [var]"
+			],
+			[
+				"displtile",
+				"displayTilemap [var]"
+			],
+			[
+				"displbitm",
+				"displayBitmap [var]"
+			],
+			[
+				"par",
+				"partionStruct : editor.CellMap"
+			],
+			[
+				"vec",
+				"Vector [class]"
+			],
+			[
+				"Veco",
+				"DRMVoucherStoreContext [flash9.net.drm]"
+			],
+			[
+				"bool",
+				"Bool [class]"
+			],
+			[
+				"ad",
+				"addEntity( _e : editor.Entity ) : Void"
+			],
+			[
+				"Celmap",
+				"CellMap [class]"
+			],
+			[
+				"pu",
+				"push( x : editor.Entity ) : Int"
+			],
+			[
+				"Cell",
+				"CellMap [editor]"
+			],
+			[
+				"Fl",
+				"Float2 [editor]"
+			],
+			[
+				"Vecot",
+				"DRMVoucherStoreContext [flash9.net.drm]"
+			],
+			[
+				"gy",
+				"gy"
+			],
+			[
+				"set",
+				"set(...) : Void"
+			],
+			[
+				"Typ",
+				"TypedDictionary [class]"
+			],
+			[
+				"Typed",
+				"TypedDictionary [class]"
+			],
+			[
+				"typed",
+				"TypedDictionary [flash9.utils]"
+			],
+			[
+				"0",
+				"_0"
+			],
+			[
+				"fLOAT2",
+				"Float2 [editor]"
+			],
+			[
+				"cellm",
+				"CellMap [editor]"
+			],
+			[
+				"Float2",
+				"Float2 [class]"
+			],
+			[
+				"Dya",
+				"Dynamic [class]"
+			],
+			[
+				"float2",
+				"Float2 [editor]"
+			],
+			[
+				"floa",
+				"Float2 [editor]"
+			],
+			[
+				"float",
+				"Float [class]"
+			],
+			[
+				"Float",
+				"Float [class]"
+			],
+			[
+				"flo",
+				"Float [class]"
+			],
+			[
+				"f",
+				"Float [class]"
+			],
+			[
+				"enti",
+				"entities"
+			],
+			[
+				"puh",
+				"push( x : editor.Entity ) : Int"
+			],
+			[
+				"e",
+				"entities : flash.Vector<editor.Entity>"
+			],
+			[
+				"displ",
+				"displayTilemap : editor.Tilemap"
+			],
+			[
+				"eb",
+				"eb"
+			],
+			[
+				"ed",
+				"ed"
+			],
+			[
+				"Dynam",
+				"Dynamic [class]"
+			],
+			[
+				"maphe",
+				"mapHeight : Int"
+			],
+			[
+				"wi",
+				"mapWidth : Int"
+			],
+			[
+				"hei",
+				"height : Float"
+			],
+			[
+				"y",
+				"y : Float"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "issues.txt",
+			"settings":
+			{
+				"buffer_size": 1694,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "editor/Entities.hx",
+			"settings":
+			{
+				"buffer_size": 1137,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "editor/Tilemap.hx",
+			"settings":
+			{
+				"buffer_size": 3007,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "editor/EditBuffer.hx",
+			"settings":
+			{
+				"buffer_size": 9013,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "bin/cfg.json",
+			"settings":
+			{
+				"buffer_size": 457,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"selected_items":
+		[
+			[
+				"class",
+				"Snippet: Class"
+			],
+			[
+				"moo",
+				"Snippet: Anonymous Function (f)"
+			],
+			[
+				"",
+				"About"
+			]
+		],
+		"width": 392.0
+	},
+	"console":
+	{
+		"height": 129.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/home/e/Documents/test1/editor/EditorCore.hx",
+		"/home/e/Documents/test1/editor/EnginePanel.hx",
+		"/home/e/tfq/tfq-collab/src/Main.hx",
+		"/home/e/Documents/test1/tFramework/core/Manager.hx",
+		"/home/e/Documents/test1/compile.hxml",
+		"/home/e/Documents/test1/Core.hx",
+		"/home/e/Documents/test1/io/MapSe.hx",
+		"/home/e/Documents/test1/Main.hx",
+		"/home/e/Documents/test1/editor/CellMap.hx",
+		"/home/e/Documents/test1/nme_compile.nmml",
+		"/home/e/Documents/test2/compile.nmml",
+		"/usr/share/haxe/flash9/Vector.hx",
+		"/home/e/Documents/test1/editor/EditBuffer.hx",
+		"/home/e/Documents/test1/editor/ToolBox.hx",
+		"/home/e/Documents/test1/editor/TilePallet.hx",
+		"/home/e/Documents/test1/editor/NewBufferWizard.hx",
+		"/home/e/Documents/test1/editor/Entity.hx",
+		"/home/e/Documents/test1/editor/Tilemap.hx",
+		"/home/e/Documents/test1/editor/OpenBuffer.hx",
+		"/home/e/Documents/test1/editor/CellMapObject.hx",
+		"/home/e/Documents/test1/editor/Float2.hx",
+		"/home/e/Documents/test1/tk/SimpleOut.hx",
+		"/home/e/Desktop/my new map.json",
+		"/home/e/Documents/test1/editor/Menu.hx",
+		"/home/e/Desktop/p.json",
+		"/home/e/Documents/test1/editor/ByteImage.hx",
+		"/home/e/Documents/test1/editor/OpenBuffer.hx\\",
+		"/home/e/Documents/test1/bin/cfg.json",
+		"/home/e/Documents/test1/editor/Entities.hx",
+		"/home/e/Documents/test1/tk/Panel.hx",
+		"/home/e/Documents/test1/issues.txt",
+		"/home/e/Documents/test1/editor/EntButton.hx",
+		"/home/e/Documents/test1/tk/SlideBar.hx",
+		"/home/e/Documents/test1/bin/EntityIcon.png",
+		"/home/e/Documents/test1/tk/Slider.hx",
+		"/home/e/Documents/test1/editor/Slider.hx",
+		"/home/e/Documents/test1/tk/Button.hx",
+		"/home/e/Documents/test1/editor/ToolButton.hx",
+		"/home/e/Documents/test1/bin/testtiles",
+		"/home/e/.config/sublime-text-2/Packages/User/Global.sublime-settings",
+		"/home/e/Documents/test1/tk/ToolkitEngine.hx",
+		"/home/e/Documents/test1/tk/io/GraphicLoader.hx",
+		"/home/e/Documents/test1/tk/io/BinaryLoader.hx",
+		"/home/e/Documents/test1/tk/Input.hx",
+		"/home/e/Documents/test1/bin/dscrpt.txt",
+		"/home/e/Documents/test1/bin/graphite/dscrpt.txt",
+		"/home/e/Documents/test1/mlc/haxe/input/ConsoleInputSource.hx",
+		"/home/e/Documents/test1/tk/io/Binaryloader.hx",
+		"/home/e/Documents/test1/tk/Binaryloader.hx",
+		"/home/e/Documents/test1/bin/Main.swf",
+		"/home/e/Documents/test1/test.sublime-project",
+		"/home/e/Documents/test1/test.sublime-workspace",
+		"/home/e/.config/sublime-text-2/Packages/User/Default (Linux).sublime-keymap",
+		"/home/e/Documents/test1/src/Main.hx"
+	],
+	"find":
+	{
+		"height": 33.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"{\"name\":\"player start\"},\n		{\"name\":\"plushie\"},\n		{\"name\":\"check point\"},\n		{\"name\":\"crate\"},\n		{\"name\":\"player start\"},\n		{\"name\":\"plushie\"},\n		{\"name\":\"check point\"},\n		{\"name\":\"crate\"},\n		{\"name\":\"player start\"},\n		{\"name\":\"plushie\"},\n		{\"name\":\"check point\"},\n		{\"name\":\"crate\"}",
+			"trace",
+			"P",
+			"());"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 4,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "issues.txt",
+					"settings":
+					{
+						"buffer_size": 1694,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1562,
+								1569
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 600.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "editor/Entities.hx",
+					"settings":
+					{
+						"buffer_size": 1137,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								950,
+								950
+							]
+						],
+						"settings":
+						{
+							"haxe-build-id": 0,
+							"syntax": "Packages/HaXe/HaXe.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 117.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "editor/Tilemap.hx",
+					"settings":
+					{
+						"buffer_size": 3007,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"haxe-build-id": 0,
+							"syntax": "Packages/HaXe/HaXe.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "editor/EditBuffer.hx",
+					"settings":
+					{
+						"buffer_size": 9013,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								5991,
+								5991
+							]
+						],
+						"settings":
+						{
+							"haxe-build-id": 0,
+							"syntax": "Packages/HaXe/HaXe.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 3003.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "bin/cfg.json",
+					"settings":
+					{
+						"buffer_size": 457,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								74,
+								74
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 13.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 29.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.haxe":
+	{
+		"height": 88.0
+	},
+	"replace":
+	{
+		"height": 0.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"",
+				"editor/ToolBox.hx"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 211.0,
+	"status_bar_visible": true
+}

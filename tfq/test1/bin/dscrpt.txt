@@ -1,0 +1,4 @@
+[set_name : bloody]
+[panel_color : 0xaa0000]
+[panel_color2 : 0x660000]
+[text_color : 0xffffff]

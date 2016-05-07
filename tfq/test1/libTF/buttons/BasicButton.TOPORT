@@ -1,0 +1,21 @@
+package libTF.buttons 
+{
+	import libTF.shapes.Rect;
+	
+	public class BasicButton extends Button
+	{
+		
+		public function BasicButton(width:int, height:int, pressFunc:Function = null, colors:Vector.<uint> = null, keepDown:Boolean = false) 
+		{
+			if (!colors) { colors = Vector.<uint>([0x777777, 0x555555, 0x999999]); }
+			var upS:Rect = new Rect(width, height, colors[0]);
+			var overS:Rect = new Rect(width, height, colors[1]);
+			var downS:Rect = new Rect(width, height, colors[2]);
+			var hitS:Rect = new Rect(width, height);
+			
+			super(upS, downS, overS, hitS, pressFunc, keepDown);
+		}
+		
+	}
+
+}

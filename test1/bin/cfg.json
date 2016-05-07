@@ -1,0 +1,16 @@
+{
+	"tiles":
+	[
+		{"main":0, "autotiles":[0,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3]},
+		{"main":1, "autotiles":[1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2]},
+		{"main":2, "autotiles":null},
+		{"main":3, "autotiles":null}
+	],
+	"entities":
+	[
+		{"name":"player","bounds":{"left":-8,"right":8,"up":-12,"down":12}},
+		{"name":"plushie","bounds":{"left":-8,"right":8,"up":-8,"down":8}},
+		{"name":"crate","bounds":{"left":-8,"right":8,"up":-8,"down":8}},
+		{"name":"pacer","bounds":{"left":-8,"right":8,"up":-8,"down":8}}
+	]
+}

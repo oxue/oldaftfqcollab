@@ -1,0 +1,16 @@
+{
+	"tiles":
+	[
+		{"main":0, "autotiles":[0,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3]},
+		{"main":1, "autotiles":[1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2]},
+		{"main":2, "autotiles":null},
+		{"main":3, "autotiles":null}
+	],
+	"entities":
+	[
+		{"name":"player start","bounds":{"left":-10,"right":10,"up":-15,"down":15}},
+		{"name":"plushie","bounds":{"left":-10,"right":10,"up":-10,"down":10}},
+		{"name":"check point","bounds":{}},
+		{"name":"crate","bounds":{"left":-20,"right":20,"up":-20,"down":20}}
+	]
+}

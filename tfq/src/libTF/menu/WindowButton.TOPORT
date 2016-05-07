@@ -1,0 +1,32 @@
+package libTF.menu 
+{
+	import flash.geom.Rectangle;
+	import libTF.buttons.TextButton;
+	import libTF.shapes.Rect;
+	
+	public class WindowButton extends TextButton
+	{
+		
+		public function WindowButton(width:int, height:int, text:String, winTitle:String, winRect:Rectangle) 
+		{
+			var func:Function = function():void
+			{
+				if (parent.parent is Pane)
+				{
+					var par:Pane = parent.parent as Pane;
+					var wind:Pane = new Pane(winRect.width - Math.random() * 20, winRect.height - Math.random() * 20, winTitle, true);
+					wind.x = winRect.x + Math.random() * 20;
+					wind.y = winRect.y + Math.random() * 20;
+					parent.addChild(wind);
+					var winButt:WindowButton = new WindowButton(width, height, text, winTitle, new Rectangle(winRect.x, winRect.y, winRect.width /2, winRect.height /2));
+					winButt.y = 10;
+					winButt.x = 50;
+					wind.contents.addChild(winButt);
+				}
+			}
+			super(width, height, text, func);
+		}
+		
+	}
+
+}

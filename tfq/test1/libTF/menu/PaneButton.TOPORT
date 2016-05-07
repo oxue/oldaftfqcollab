@@ -1,0 +1,92 @@
+package libTF.menu 
+{
+	import flash.display.MovieClip;
+	import flash.display.Sprite;
+	import flash.events.MouseEvent;
+	import libTF.buttons.BasicButton;
+	
+	public class PaneButton extends BasicButton
+	{
+		
+		public static const CLOSE:String = "CLOSE";
+		public static const MIN:String = "MIN";
+		public static const MOVE:String = "MOVE";
+		public static const SCALE:String = "SCALE";
+		
+		private var pane:Pane;
+		private var symbol:Sprite;
+		
+		public function PaneButton(type:String, pane:Pane) 
+		{
+			var func:Function;
+			var movement:Boolean = false;
+			if (type == CLOSE) { func = close; }
+			else if (type == MIN) { func = min; }
+			else if (type == MOVE) { func = move; movement = true; }
+			else if (type == SCALE) { func = scale; movement = true; }
+			
+			super(16, 16, func, null, movement);
+			
+			symbol = new Sprite();
+			symbol.graphics.lineStyle(1);
+			switch(type)
+			{
+				case CLOSE:
+					symbol.graphics.moveTo( -6, 6);
+					symbol.graphics.lineTo( 6, -6);
+					symbol.graphics.moveTo( -6, -6);
+					symbol.graphics.lineTo( 6, 6);
+					break;
+				case MIN:
+					symbol.graphics.moveTo( -6, 0);
+					symbol.graphics.lineTo( 6, 0);
+					break;
+				case MOVE:
+					symbol.graphics.moveTo( -6, 6);
+					symbol.graphics.lineTo( 6, 6);
+					symbol.graphics.lineTo( 6, -6);
+					symbol.graphics.lineTo( -6, -6);
+					symbol.graphics.lineTo( -6, 6);
+					break;
+					break;
+				case SCALE:
+					symbol.graphics.moveTo( -6, 6);
+					symbol.graphics.lineTo( 6, 6);
+					symbol.graphics.lineTo( 6, -6);
+					symbol.graphics.lineTo( -6, -6);
+					symbol.graphics.lineTo( -6, 6);
+					symbol.graphics.moveTo( -6, 0);
+					symbol.graphics.lineTo( 0, 0);
+					symbol.graphics.lineTo( 0, -6);
+					break;
+				default:
+					break;
+			}
+			addChild(symbol);
+			
+			this.pane = pane;
+		}
+		
+		private function close():void
+		{
+			pane.remove();
+		}
+		
+		public function min():void
+		{
+			pane.minimize();
+		}
+		
+		public function move():void
+		{
+			pane.move();
+		}
+		
+		public function scale():void
+		{
+			pane.startScale();
+		}
+		
+	}
+
+}

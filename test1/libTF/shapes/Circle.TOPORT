@@ -1,0 +1,15 @@
+package  libTF.shapes
+{
+	import flash.display.Sprite;
+	
+	public class Circle extends Oval
+	{
+		
+		public function Circle(rad:int, fill:uint = 0xFFFFFF, outline:uint = 0x000000) 
+		{
+			super (rad, rad, fill, outline);
+		}
+		
+	}
+
+}

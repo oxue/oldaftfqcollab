@@ -1,0 +1,26 @@
+package ;
+
+import editor.CellMap;
+import editor.EditorCore;
+import editor.Float2;
+import flash.display.StageScaleMode;
+import tFramework.core.Manager;
+import tk.Button;
+import tk.Panel;
+import tk.SimpleOut;
+import tk.ToolkitEngine;
+
+class Main
+{
+
+	static function main()
+	{
+		ToolkitEngine.loadDescriptorFile("dscrpt.txt",done);
+		flash.Lib.current.stage.scaleMode = StageScaleMode.NO_SCALE;
+	}
+
+	public static function done():Void
+	{
+		EditorCore.init(flash.Lib.current);
+	}
+}

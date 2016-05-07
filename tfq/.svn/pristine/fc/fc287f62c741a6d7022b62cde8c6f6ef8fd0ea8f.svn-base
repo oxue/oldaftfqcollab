@@ -1,0 +1,27 @@
+package io;
+import flash.Vector;
+import game.tiles.AirTile;
+import game.tiles.DirtTile1;
+import game.tiles.DirtTile2;
+import game.tiles.MetalTile;
+import game.tiles.WaterTile;
+import tFramework.tile.Tile;
+
+/**
+ * ...
+ * @author qwerber
+ */
+
+class StandardTileIndexes 
+{
+	public var indexes:Vector<Tile>;
+	
+	public function new() 
+	{
+		indexes = new Vector();
+		indexes.push(new AirTile());
+		indexes.push(new DirtTile1());
+		indexes.push(new DirtTile2());
+	}
+	
+}

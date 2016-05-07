@@ -1,0 +1,67 @@
+package libTF.pathfinder 
+{
+	
+	public class PathGrid 
+	{
+		public var width:int;
+		public var height:int;
+		
+		public var vect:Vector.<PathNode>;
+		
+		public function PathGrid(width:int, height:int) 
+		{
+			this.width = width;
+			this.height = height;
+			vect = new Vector.<PathNode>();
+			var node:PathNode;
+			for (var j:int = 0; j < height; j++)
+			{
+				for (var i:int = 0; i < width; i++)
+				{
+					node = new PathNode(1000)
+					vect.push(node);
+					node.x = i;
+					node.y = j;
+				}
+			}
+			for (i = 0; i < width; i++)
+			{
+				for (j = 0; j < height; j++)
+				{
+					node = vect[i + j * width];
+					if (j>0) {node.up = vect[i + (j-1) * width];}
+					if (j<height-1) {node.down = vect[i + (j+1) * width];}
+					if (i>0) {node.left = vect[(i-1) + j * width];}
+					if (i<width-1) {node.right = vect[(i+1) + j * width];}
+					if (j>0 && i>0) {node.upperLeft = vect[(i-1) + (j-1) * width];}
+					if (j>0 && i<width-1) {node.upperRight = vect[(i+1) + (j-1) * width];}
+					if (j<height-1 && i>0) {node.lowerLeft = vect[(i-1) + (j+1) * width];}
+					if (j < height - 1 && i < width - 1) { node.lowerRight = vect[(i + 1) + (j + 1) * width]; }
+				}
+			}
+		}
+		
+		public function populateCost(v:Vector.<int>):void
+		{
+			for (var i:int = 0; i < v.length && i < vect.length; i++ )
+			{
+				vect[i].mCost = v[i];
+			}
+		}
+		
+		public function populateBlocked(v:Vector.<Boolean>):void
+		{
+			for (var i:int = 0; i < v.length && i < vect.length; i++ )
+			{
+				vect[i].blocked = v[i];
+			}
+		}
+		
+		public function getNode(x:int, y:int):PathNode
+		{
+			return vect[x + y * width];
+		}
+		
+	}
+
+}

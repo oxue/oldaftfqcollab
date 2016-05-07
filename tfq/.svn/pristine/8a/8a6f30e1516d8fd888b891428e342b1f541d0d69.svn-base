@@ -1,0 +1,14 @@
+package ;
+
+import tFramework.core.Manager;
+
+
+class Main 
+{
+	
+	static function main() 
+	{
+		Manager.main();
+	}
+	
+}

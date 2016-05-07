@@ -1,0 +1,51 @@
+package libTF.pathfinder 
+{
+	
+	public class PathNode
+	{
+		public var mCost:int;
+		public var blocked:Boolean;
+		
+		public var closed:Boolean;
+		public var open:Boolean;
+		
+		public var F:int;
+		public var G:int;
+		public var H:int;
+		
+		public var x:int;
+		public var y:int;
+		
+		public var parent:PathNode;
+		
+		public var left:PathNode, up:PathNode, right:PathNode, down:PathNode;
+		public var upperRight:PathNode, upperLeft:PathNode, lowerRight:PathNode, lowerLeft:PathNode;
+		
+		public function PathNode(movementCost:int, block:Boolean = false) 
+		{
+			mCost = movementCost;
+			blocked = block;
+			closed = false;
+			open = false;
+		}
+		
+		public function setCoords():void
+		{
+			x = 0; y = 0;
+			var L:PathNode = left;
+			while (L)
+			{
+				x++;
+				L = left;
+			}
+			var U:PathNode = up;
+			while (U)
+			{
+				y++;
+				U = up;
+			}
+		}
+		
+	}
+
+}

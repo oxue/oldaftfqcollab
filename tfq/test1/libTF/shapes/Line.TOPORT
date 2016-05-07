@@ -1,0 +1,17 @@
+package libTF.shapes 
+{
+	import flash.display.MovieClip;
+	
+	public class Line extends MovieClip
+	{
+		
+		public function Line(length, color:uint = 0x000000) 
+		{
+			graphics.lineStyle(1, color);
+			graphics.moveTo( -length2, 0);
+			graphics.lineTo(length / 2, 0);
+		}
+		
+	}
+
+}

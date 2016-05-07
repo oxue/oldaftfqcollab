@@ -1,0 +1,23 @@
+package libTF.buttons 
+{
+	import flash.display.GraphicsGradientFill
+	import flash.display.Sprite;
+	import libTF.shapes.GradRRect;
+	
+	public class BetterButton extends Button 
+	{
+		
+		public function BetterButton(width:int, height:int, pressFunc:Function = null, colors:Vector.<uint> = null, keepDown:Boolean = false) 
+		{
+			if (!colors) { colors = Vector.<uint>([0x777777, 0x555555, 0x999999]); }
+			var upS:GradRRect = new GradRRect(width, height, colors[0], 0xFFFFFF, height*.9);
+			var downS:GradRRect = new GradRRect(width, height, colors[1], 0xFFFFFF, height*.9);
+			var overS:GradRRect = new GradRRect(width, height, colors[2], 0xFFFFFF, height*.9);
+			var hitS:GradRRect = new GradRRect(width, height, colors[2], 0xFFFFFF, height*.9);
+			
+			super(upS, downS, overS, hitS, pressFunc, keepDown);
+		}
+		
+	}
+
+}

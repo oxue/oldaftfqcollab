@@ -1,0 +1,14 @@
+package  libTF.shapes
+{
+	
+	public class Square extends Rect
+	{
+		
+		public function Square(side:int, fill:uint = 0xFFFFFF, outline:uint = 0x000000) 
+		{
+			super(side, side, fill, outline);
+		}
+		
+	}
+
+}

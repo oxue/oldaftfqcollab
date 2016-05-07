@@ -1,0 +1,5 @@
+-main Main.hx
+-swf9 bin/Main.swf
+-swf-version 11
+-swf-header 1035:600:30:ffffff
+-swf-lib obj/tfqcResources.swf

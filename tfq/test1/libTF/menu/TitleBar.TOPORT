@@ -1,0 +1,59 @@
+package libTF.menu 
+{
+	import flash.display.Graphics;
+	import flash.display.Sprite;
+	import flash.text.TextField;
+	import flash.text.TextFormat;
+	import flash.text.TextFieldAutoSize;
+	
+	public class TitleBar extends Sprite
+	{
+		private var pane:Pane;
+		public var txt:TextField;
+		private var closeBtn:PaneButton;
+		private var minBtn:PaneButton;
+		private var moveBtn:PaneButton;
+		
+		public function TitleBar(pane:Pane) 
+		{
+			this.pane = pane;
+			txt = new TextField();
+			txt.defaultTextFormat = new TextFormat("TimesNewRoman", 12);
+			txt.selectable = txt.multiline = false;
+			txt.text = pane.title;
+			txt.autoSize = TextFieldAutoSize.LEFT;
+			addChild(txt);
+			closeBtn = new PaneButton(PaneButton.CLOSE, pane);
+			minBtn = new PaneButton(PaneButton.MIN, pane);
+			moveBtn = new PaneButton(PaneButton.MOVE, pane);
+			moveBtn.alpha = 0;
+			moveBtn.hitArea = new Sprite();
+			addChild(moveBtn.hitArea);
+			moveBtn.hitArea.visible = false;
+			closeBtn.y = minBtn.y = moveBtn.y = 8;
+			addChild(closeBtn);
+			addChild(minBtn);
+			addChild(moveBtn);
+			redraw();
+		}
+		
+		public function redraw():void
+		{
+			var gr:Graphics = graphics;
+			gr.clear();
+			gr.lineStyle(1);
+			gr.beginFill(0x444444);
+			gr.drawRect(0, 0, pane.paneWidth - 32, 16);
+			gr = moveBtn.hitArea.graphics;
+			gr.clear();
+			gr.lineStyle(1);
+			gr.beginFill(0x444444);
+			gr.drawRect(0, 0, pane.paneWidth - 32, 16);
+			closeBtn.x = pane.paneWidth - 8;
+			minBtn.x = pane.paneWidth - 24;
+			moveBtn.x = pane.paneWidth - 40;
+		}
+		
+	}
+
+}

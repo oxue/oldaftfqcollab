@@ -1,0 +1,138 @@
+package libTF.pathfinder 
+{
+	import flash.geom.Point;
+	import libTF.dataStructures.GridNode;
+	import libTF.dataStructures.MapGrid;
+	import TDEngine.Path;
+	
+	public class Pathfinder 
+	{
+		//0+ = movement cost
+		//-1 = blocked
+		//-2 = start
+		//-3 = goal
+		public static function AStarNodeList(gr:PathGrid, start:PathNode, end:PathNode, heuristic:int = 1 , negative:Boolean = false):Vector.<Point>
+		{
+			var openList:Vector.<PathNode> = new Vector.<PathNode>();
+			var closedList:Vector.<PathNode> = new Vector.<PathNode>();
+			var pathFound:Boolean = false;
+			var path:Vector.<PathNode>;
+			var currentNode:PathNode;
+			var i:int;
+			var nodes:Vector.<PathNode>;
+			var node:PathNode;
+			openList.push(start);
+			start.open = true;
+			start.F = start.G = start.H = 0;
+			
+			while (!pathFound)
+			{
+				if (openList.length == 0) { break; }
+				if (negative) { bubblerev(openList); }
+				else { bubble(openList); }
+				currentNode = openList[openList.length - 1]; 
+				openList.length--;
+				currentNode.closed = true;
+				currentNode.open = false;
+				closedList.push(currentNode);
+				if (currentNode == end) { pathFound = true; break; }
+				nodes = Vector.<PathNode>([currentNode.up, currentNode.down, currentNode.left, currentNode.right, currentNode.upperLeft, currentNode.upperRight, currentNode.lowerLeft, currentNode.lowerRight]);
+				for (i = 0; i < 8; i++)
+				{
+					node = nodes[i];
+					if (node)
+					{
+						var tempCost:int = node.mCost;
+						if (!(node.x == currentNode.x || node.y == currentNode.y)) { tempCost *= 1.4; }
+						if (node.blocked || node.closed == true)
+						{
+							
+						}
+						else if (!node.open)
+						{
+							openList.push(node);
+							node.open = true;
+							node.parent = currentNode;
+							node.G = currentNode.G + tempCost;
+							if (heuristic == 1)
+							{
+								node.H = Math.abs(node.x - end.x) + Math.abs(node.y - end.y) * node.mCost;
+							}
+							if (heuristic == 2)
+							{
+								var xDistance:int = Math.abs(currentNode.x - node.x)
+								var yDistance:int = Math.abs(currentNode.y - node.y)
+								if (xDistance > yDistance)
+								{
+									 node.H = 14 * yDistance + 10 * (xDistance-yDistance);
+								}
+								else
+								{
+									 node.H = 14 * xDistance + 10 * (yDistance-xDistance);
+								}
+							}
+							node.F = node.G + node.H;
+						}
+						else
+						{
+							if ((node.G > currentNode.G + tempCost) != negative)
+							{
+								node.parent = currentNode;
+								node.G = currentNode.G + tempCost;
+								node.F = node.G + node.H;
+							}
+						}
+					}
+				}
+			}
+			
+			if (!pathFound)
+			{
+				return null;
+			}
+			else
+			{
+				var vec:Vector.<Point> = new Vector.<Point>();
+				var current:PathNode = end;
+				vec.unshift(new Point(current.x,current.y));
+				while (current != start)
+				{
+					current = current.parent;
+					vec.unshift(new Point(current.x,current.y));
+				}
+				return vec;
+			}
+		}
+		
+		private static function bubble(list:Vector.<PathNode>):void
+		{
+			var n:int = list.length - 1;
+			var temp:PathNode;
+			for (var i:int = 0; i < n; i++)
+			{
+				if (list[i].F < list[i+1].F)
+				{
+					temp = list[i];
+					list[i] = list[i + 1]
+					list[i + 1] = temp;
+				}
+			}
+		}
+		private static function bubblerev(list:Vector.<PathNode>):void
+		{
+			var n:int = list.length - 1;
+			var temp:PathNode;
+			for (var i:int = 0; i < n; i++)
+			{
+				if (list[i].F > list[i+1].F)
+				{
+					temp = list[i];
+					list[i] = list[i + 1]
+					list[i + 1] = temp;
+				}
+			}
+		}
+		
+	}
+
+}

@@ -1,0 +1,186 @@
+package libTF.menu 
+{
+	import flash.display.Graphics;
+	import flash.display.Sprite;
+	import flash.events.Event;
+	import flash.geom.Point;
+	import flash.geom.Rectangle;
+	import libTF.buttons.BasicButton;
+	import flash.events.MouseEvent;
+	import libTF.shapes.Rect;
+	import libTF.utils.Scaler;
+	
+	public class Pane extends Sprite
+	{
+		public var paneWidth:int;
+		public var paneHeight:int;
+		public var title:String;
+		private var dynam:Boolean;
+		private var tBar:TitleBar;
+		private var scaleBtn:PaneButton;
+		public var contents:Sprite;
+		private var border:Sprite;
+		
+		public var widthMin:int;
+		public var heightMin:int;
+		
+		private var unscaledW:int;
+		private var unscaledH:int;
+		
+		private var scaleReg:Point;
+		
+		public function Pane(width:int, height:int, title:String = null, dyn:Boolean = false) 
+		{
+			widthMin = 0;
+			heightMin = 0;
+			this.paneWidth = unscaledW = width;
+			this.paneHeight = unscaledH = height;
+			this.title = title;
+			this.dynam = dyn;
+			
+			contents = new Sprite();
+			addChild(contents);
+			border = new Sprite();
+			addChild(border);
+			
+			if (dynam)
+			{
+				tBar = new TitleBar(this);
+				addChild(tBar);
+				scaleBtn = new PaneButton(PaneButton.SCALE, this);
+				contents.addChild(scaleBtn);
+				widthMin = 40 + tBar.txt.textWidth;
+				heightMin = 16;
+				contents.y = border.y = 16;
+			}
+			
+			contents.scrollRect = new Rectangle(0, 0, paneWidth+1, paneHeight+1);
+			
+			setSize(paneWidth, paneHeight);
+			
+			unscaledW = paneWidth;
+			unscaledH = paneHeight;
+			
+		}
+		
+		public function redraw():void
+		{
+			var gr:Graphics = contents.graphics;
+			gr.clear();
+			gr.lineStyle(0);
+			gr.beginFill(0x777777);
+			gr.drawRect(0, 0, paneWidth, paneHeight);
+			gr.endFill();
+			gr = border.graphics;
+			gr.clear();
+			gr.lineStyle(1);
+			gr.drawRect(0, 0, paneWidth, paneHeight);
+			if (dynam)
+			{
+				tBar.redraw();
+				scaleBtn.x = paneWidth - 8;
+				scaleBtn.y = paneHeight - 8;
+			}
+		}
+		
+		public function setSize(w:int, h:int):void
+		{
+			paneWidth = Math.max(w,widthMin);
+			paneHeight = Math.max(h, heightMin);
+			contents.scrollRect = new Rectangle(0, 0, paneWidth, paneHeight);
+			redraw();
+		}
+		
+		private function boundsCheck():void
+		{
+			if (parent.parent is Pane)
+			{
+				var par:Pane = parent.parent as Pane;
+				if (x < 0) { x = 0; }
+				else if (x + paneWidth > par.paneWidth) { x = par.paneWidth - paneWidth; }
+				if (y < 0) { y = 0; }
+				else if (y + paneHeight + contents.y > par.paneHeight) { y = par.paneHeight - paneHeight - contents.y; }
+			}
+		}
+		
+		private function boundsCheckScale():void
+		{
+			if (parent.parent is Pane)
+			{
+				var par:Pane = parent.parent as Pane;
+				if (x + paneWidth > par.paneWidth) { setSize(par.paneWidth - x, paneHeight); }
+				if (y + paneHeight + contents.y > par.paneHeight) { setSize(paneWidth, par.paneHeight - y - contents.y); }
+			}
+		}
+		
+		public function remove():void
+		{
+			if (parent) { parent.removeChild(this); }
+		}
+		
+		public function minimize():void
+		{
+			if (parent.parent is Pane)
+			{
+				parent.setChildIndex(this, parent.numChildren - 1);
+			}
+			border.visible = contents.visible = !contents.visible;
+		}
+		
+		public function move():void
+		{
+			var rect:Rectangle = null;
+			if (parent.parent is Pane)
+			{
+				var par:Pane = (parent.parent as Pane);
+				rect = new Rectangle(0, 0, par.paneWidth - paneWidth, par.paneHeight - paneHeight - contents.y);
+				parent.setChildIndex(this, parent.numChildren - 1);
+			}
+			startDrag(false, rect);
+			addEventListener(Event.ENTER_FRAME, moving);
+			stage.addEventListener(MouseEvent.MOUSE_UP, doneMoving );
+		}
+		
+		public function startScale():void
+		{
+			if (parent.parent is Pane)
+			{
+				parent.setChildIndex(this, parent.numChildren - 1);
+			}
+			scaleReg = new Point(mouseX, mouseY);
+			addEventListener(Event.ENTER_FRAME, scaling);
+			stage.addEventListener(MouseEvent.MOUSE_UP, doneDragging );
+		}
+		
+		private function doneMoving(e:MouseEvent):void
+		{
+			stopDrag();
+			boundsCheck();
+			removeEventListener(Event.ENTER_FRAME, moving);
+			stage.removeEventListener(MouseEvent.MOUSE_UP, doneMoving);
+		}
+		
+		private function doneDragging(e:MouseEvent):void
+		{
+			scaling(null);
+			removeEventListener(Event.ENTER_FRAME, scaling);
+			stage.removeEventListener(MouseEvent.MOUSE_UP, doneDragging);
+			
+			unscaledW = paneWidth;
+			unscaledH = paneHeight;
+		}
+		
+		private function scaling(e:Event):void 
+		{ 
+			setSize(mouseX + unscaledW - scaleReg.x, mouseY + unscaledH - scaleReg.y);
+			boundsCheckScale();
+		}
+		
+		private function moving(e:Event):void
+		{
+			//boundsCheck();
+		}
+		
+	}
+
+}

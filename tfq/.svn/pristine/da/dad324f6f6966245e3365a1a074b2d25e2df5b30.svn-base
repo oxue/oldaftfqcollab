@@ -1,0 +1,9 @@
+Changes
+
+   MouseUp is no longer called when the editbuffer is moused out of.
+   You can hold space when clicking to use the panning tool.
+   Likewise, you can hold shift for eraser.
+   The line tool no longer leaves the hilight after drawing a line. (it clears)
+   The line tool draws a 'full line' (before it would skip the last tile it needed to draw in the line)
+   the "New buffer wizard" starts with default values for name, width, height, and tilesize.
+   The map doesn't start off rendering dirt everywhere.
